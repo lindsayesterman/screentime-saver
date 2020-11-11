@@ -1,0 +1,17 @@
+h1.profile, h3.connect{
+    margin:30px;
+}
+
+h3.connect{
+    float:right;
+    text-decoration: underline;
+}
+
+h1.profile{
+    float:left;
+}
+
+div.profile-info > h3{
+    margin:28px auto;
+    width: 60%;
+}

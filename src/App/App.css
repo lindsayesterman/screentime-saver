@@ -1,0 +1,28 @@
+*{
+    background-color: #333;
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1, h3.front-sign-up{
+    display:inline-block;
+}
+
+h1{
+    float:left;
+}
+
+h3.front-sign-up{
+    text-align:right;
+    margin:30px;
+    float:right;
+    text-decoration: underline;
+}
+
+h2.front-quote{
+    position: absolute;
+    width:35%;
+    top:45%;
+    left:50%;
+    transform: translate(-50%);
+}
