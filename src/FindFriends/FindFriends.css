@@ -2,11 +2,10 @@ input.search-bar{
     width:50%;
     background-color:white;
     color:black;
-    text-align:left;
-    float:right;
-    margin:30px;
-}
-
-h1.connect{
-    margin-left:10px;
+    display:block;
+    position:absolute;
+    top:13%;
+    left:50%;
+    transform:translate(-50%);
+    padding:8px;
 }

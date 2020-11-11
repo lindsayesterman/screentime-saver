@@ -1,0 +1,17 @@
+h1.title, h4{
+    display:inline-block;
+    margin:5px;
+}
+
+div.nav-bar h4{
+    float:right;
+    text-decoration: underline;
+    margin-top: 15px;
+    margin-top:25px;
+
+}
+
+h1.title{
+    float:left;
+    margin-top:15px;
+}
