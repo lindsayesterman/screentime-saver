@@ -43,6 +43,14 @@ img {
     height:100%;
 }
 
+.about {
+    position:absolute;
+    top:90%;
+    left:50%;
+    width:70%;
+    transform: translate(-50%); 
+}
+
 @media only screen and (min-width: 800px){
     img {
         width:55%;

@@ -32,20 +32,11 @@ render () {
     return (
       <form className="registration" onSubmit={e => this.handleSubmit(e)}>
         <NavBar />
-        <br/><br/>
-        <h2>Register</h2>
-        <div className="registration__hint">* required field</div>  
-        <div className="form-group">
-          <label htmlFor="name">Name *</label>
+        <div className="container-login">
           <input type="text" className="registration__control"
-            name="name" id="name" onChange={e => this.updateName(e.target.value)} />
-        </div>
-        <div className="form-group">
-           <label htmlFor="password">Password *</label>
+            name="name" id="name" placeholder="Name..." onChange={e => this.updateName(e.target.value)} />
            <input type="password" className="registration__control"
-            name="password" id="password" onChange={e => this.updatePassword(e.target.value)}/>
-        </div>      
-        <div className="registration__button__group">
+            name="password" id="password" placeholder="Password..." onChange={e => this.updatePassword(e.target.value)}/>
          <button type="reset" className="registration__button">
              Cancel
          </button>

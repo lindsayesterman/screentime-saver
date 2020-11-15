@@ -8,7 +8,7 @@ export default function NavBar(props){
         <Link to='/'>
             <h1 className="title">Screentime Saver</h1>
         </Link>
-        <Link to='/logout'>
+        <Link to='/'>
             <h4 className="logout">Log Out</h4>
           </Link>
         <Link to='/profile'>

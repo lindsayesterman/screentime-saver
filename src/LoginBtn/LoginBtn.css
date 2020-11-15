@@ -1,0 +1,21 @@
+div.container-login{
+    padding-top:130px;
+}
+
+input {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    opacity: 0.85;
+    font-size: 17px;
+    display:block;
+    margin:20px auto;
+}
+
+button{
+    cursor: pointer;
+    display:block;
+    margin:20px auto;
+  }
+

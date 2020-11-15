@@ -6,6 +6,7 @@ import NavBar from '../NavBar/NavBar.js'
 
 export default class Profile extends React.Component{
   render(){
+    console.log(this.props.name)
     return (
       <>
         <NavBar />

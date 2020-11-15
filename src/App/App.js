@@ -5,7 +5,6 @@ import { Route, Link } from 'react-router-dom'
 import Profile from '../Profile/Profile'
 import FindFriends from '../FindFriends/FindFriends'
 import './App.css'
-import phone from '../phone.png'
 
 class App extends React.Component{
   constructor(props){
@@ -39,6 +38,10 @@ updatePassword(password){
           </Link>
           <h2 className="front-quote">Are you a digital minimalist? Compete with your friends to find out!</h2>
           <img src="https://mockuphone.com/static/images/devices/apple-iphone7plus-silver-landscape.png"></img>
+        <div className="about">
+        <h4>How Screentime-Saver works: </h4>
+        <p>Screentime-saver is an app that allows users to input phone screentimes every day and compete with friends for the lowest weekly average. Create groups of friends and each week the group member with the lowest average weekly screentime is announced! </p>
+        </div>
         </Route>
         <Route path="/register" component={Register}/>
         <Route path="/login"  component={Login} />

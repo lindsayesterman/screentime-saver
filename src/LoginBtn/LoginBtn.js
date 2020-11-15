@@ -2,6 +2,7 @@ import React from 'react'
 import './LoginBtn.css'
 import { Link } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar.js'
+import './LoginBtn.css'
 
 class Login extends React.Component{
 
@@ -26,17 +27,11 @@ class Login extends React.Component{
         <>
         <NavBar />
         <form className="registration" onSubmit={e => this.handleSubmit(e)}>
-        <br/><br/>
-        <h2>Login</h2>
-        <div className="form-group-login">
-          <label htmlFor="name">Name</label>
+        <div className="container-login">
           <input type="text" className="registration__control"
-            name="name" id="name" onChange={e => this.updateName(e.target.value)}/>
-        </div>
-        <div className="form-group">
-           <label htmlFor="password">Password</label>
+            name="name" id="name" placeHolder="Name..." onChange={e => this.updateName(e.target.value)}/>
            <input type="password" className="registration__control"
-            name="password" id="password" onChange={e => this.updatePassword(e.target.value)}/>     
+            name="password" placeHolder="Password..." id="password" onChange={e => this.updatePassword(e.target.value)}/>     
          <button 
           type="submit"
           >
