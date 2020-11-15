@@ -10,7 +10,6 @@ export default class Profile extends React.Component{
     return (
       <>
         <NavBar />
-          <br/><br/><br/><br/><br/><br/><br/><br/>
           <div className="profile-info">
             <h3>Name: {this.props.name} </h3>
             <h3>Lowest Screentime Day:</h3>
