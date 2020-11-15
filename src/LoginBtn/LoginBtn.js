@@ -1,15 +1,9 @@
 import React from 'react'
 import './LoginBtn.css'
 import { Link } from 'react-router-dom'
+import NavBar from '../NavBar/NavBar.js'
 
 class Login extends React.Component{
-  constructor(props){
-    super(props);
-    this.state={
-        name: '', 
-        password: ''
-    };
-}
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -20,16 +14,19 @@ class Login extends React.Component{
     }
 
     updateName(name){
-        this.setState({name:name})
+      this.setState({name:name})
     }
-
+    
     updatePassword(password){
-        this.setState({password:password})
+      this.setState({password:password})
     }
 
     render(){
         return(
+        <>
+        <NavBar />
         <form className="registration" onSubmit={e => this.handleSubmit(e)}>
+        <br/><br/>
         <h2>Login</h2>
         <div className="form-group-login">
           <label htmlFor="name">Name</label>
@@ -47,6 +44,7 @@ class Login extends React.Component{
          </button>
         </div>
       </form>
+      </>
         )
     }
 }

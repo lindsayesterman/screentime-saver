@@ -7,6 +7,22 @@ import FindFriends from '../FindFriends/FindFriends'
 import './App.css'
 
 class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state={
+        name: '', 
+        password: ''
+    };
+}
+
+updateName(name){
+  this.setState({name:name})
+}
+
+updatePassword(password){
+  this.setState({password:password})
+}
+
   render(){
     return (
       <div className="App">
@@ -24,7 +40,7 @@ class App extends React.Component{
         <Route path="/login"  component={Login} />
         <Route
             path='/profile'
-            component={Profile}
+            component={props => <Profile name={this.props.name}/>}
             />
             <Route
             path='/friends'
