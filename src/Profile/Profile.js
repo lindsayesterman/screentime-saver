@@ -1,6 +1,4 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom'
-import FindFriends from '../FindFriends/FindFriends'
 import './Profile.css'
 import NavBar from '../NavBar/NavBar.js'
 

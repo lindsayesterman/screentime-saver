@@ -50,7 +50,7 @@ updatePassword(password){
               render={routeProps => {
                   return(
                     <Profile
-                      name={this.props.name}
+                      name={this.state.name}
                       {...routeProps}
                       /> 
                   )

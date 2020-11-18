@@ -1,6 +1,5 @@
 import React from 'react'
 import './LoginBtn.css'
-import { Link } from 'react-router-dom'
 import NavBar from '../NavBar/NavBar.js'
 import './LoginBtn.css'
 
