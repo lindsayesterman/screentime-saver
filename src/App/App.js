@@ -17,6 +17,56 @@ class App extends React.Component{
       error: null
     };
   }
+
+  componentDidMount() {
+    Promise.all([
+        fetch(`http://localhost:8000/api/users`),
+        fetch(`http://localhost:8000/api/scrtimes`)
+    ])
+        .then(([usersRes, scrtimesRes]) => {
+            if (!usersRes.ok)
+                return usersRes.json().then(e => Promise.reject(e));
+            if (!scrtimesRes.ok)
+                return scrtimesRes.json().then(e => Promise.reject(e));
+
+            return Promise.all([usersRes.json(), scrtimesRes.json()]);
+        })
+        .then(([users, scrtimes]) => {
+            this.setState({
+              users, 
+              scrtimes
+            });
+        })
+        .catch(error => {
+            this.setState({ error })
+            console.error({error});
+        });
+}
+
+
+setUsers = users => {
+  this.setState({
+    users
+  })
+}
+
+setScrtimes = scrtimes => {
+  this.setState({
+    scrtimes
+  })
+}
+
+addUser = user => {
+  this.setState({
+    users: [ ...this.state.users, user ],
+  })
+}
+
+addScrtime = scrtime => {
+  this.setState({
+    scrtime: [ ...this.state.scrtimes, scrtime ],
+  })
+}
   
   render(){
     const context = {
@@ -66,8 +116,15 @@ class App extends React.Component{
         />
         <Route
         path='/friends'
-        component={FindFriends}
-        />
+        render={routeProps => {
+          return(
+            <FindFriends
+            users={context.users}
+            {...routeProps}
+            /> 
+            )
+          }}
+          />
         </div>
         </UsersContext.Provider>
         );
