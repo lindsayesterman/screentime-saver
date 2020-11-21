@@ -12,12 +12,13 @@ input.search-bar{
 
 ul {
     margin: 0px auto;
-    width:60%;
+    width:70%;
 }
 
 ul li {
     list-style: none;
     border: 1px solid gray;
-    height:80px;
+    height:120px;
     margin-bottom:20px;
+    padding:50px;
 }

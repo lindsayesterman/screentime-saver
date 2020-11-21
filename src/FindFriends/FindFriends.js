@@ -1,9 +1,10 @@
 import React from 'react'
 import './FindFriends.css'
 import NavBar from '../NavBar/NavBar.js'
-import { Link } from 'react-router-dom';
+import { Link , Route} from 'react-router-dom';
 import UsersContext from '../usersContext'
 import User from '../User'
+import Profile from '../Profile/Profile'
 
 export default class FindFriends extends React.Component{
   
@@ -26,11 +27,12 @@ export default class FindFriends extends React.Component{
       <ul>
       {users.map(user =>
       <Link 
-      to={`/user/${user.id}`}
+      to={'/profile'}
       style={{ textDecoration: 'none' }}
       key={user.id}>
         <User
-        user_name = {user.user_name}
+        name = {user.user_name}
+        bio = {user.user_bio}
         key={user.id}
         {...user}
         /> 

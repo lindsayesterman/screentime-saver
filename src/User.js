@@ -7,7 +7,8 @@ export default class User extends React.Component{
     render(){
         return(
             <li className='user'>
-                <h3>{this.props.user_name}</h3>
+                <h3>{this.props.name}</h3>
+                <h3>{this.props.bio}</h3>
             </li>
         )
     }

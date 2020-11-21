@@ -14,6 +14,7 @@ class Register extends React.Component{
     const user  = {
       user_name: e.target['name'].value,
       user_password: e.target['password'].value,
+      user_bio: e.target['bio'].value,
       date_created: new Date(),
     }
     this.setState({error:null})
@@ -59,6 +60,12 @@ render () {
     name="password" 
     id="password" 
     placeholder="Password..."/>
+    <textarea 
+    type="text" 
+    className="bio"
+    name="bio" 
+    id="bio" 
+    placeholder="Tell us about yourself!"/>
     <button 
     type="reset" 
     className="registration__button">

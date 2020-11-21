@@ -13,8 +13,9 @@ export default class Profile extends React.Component{
       <>
         <NavBar />
           <div className="profile-info">
-            <h3>Name: {this.context.user.user_name} </h3>
-           <h3>Lowest Screentime Day:</h3>
+          <h3>Name: {this.context.user.user_name} </h3>
+          <h3>About: {this.context.user.user_bio}  </h3>
+          <h3>Lowest Screentime Day:</h3>
         </div>
         </>
       );
