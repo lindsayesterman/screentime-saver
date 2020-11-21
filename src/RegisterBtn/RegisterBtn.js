@@ -1,53 +1,76 @@
 import React from 'react';
-import ValidationError from './ValidationError'
-import Profile from '../Profile/Profile'
 import NavBar from '../NavBar/NavBar.js'
+import UsersContext from '../usersContext.js'
 
 class Register extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '', 
-            password: ''
-        }
+  state = {
+    error: null,
+  };
+
+  static contextType = UsersContext;
+
+  handleUserSubmit = (e) => {
+    e.preventDefault();
+    const user  = {
+      user_name: e.target['name'].value,
+      user_password: e.target['password'].value,
+      date_created: new Date(),
     }
-
-handleSubmit(event){
-    event.preventDefault();
-    const { name, password }  = this.state;
-    console.log('Name: ', name);
-    console.log('Password: ', password);
-    this.props.history.push('/profile');
-}
-
-updateName(name){
-    this.setState({name: name})
-}
-
-updatePassword(password){
-    this.setState({password: password })
+    this.setState({error:null})
+    fetch(`http://localhost:8000/api/users`, {
+    method: 'POST',
+    body: JSON.stringify(user),
+    headers: {
+      'content-type': 'application/json'
+    }
+  })
+  .then(res => {
+    if (!res.ok){
+      return res.json().then(error => {
+        throw error
+      })
+    }
+    return res.json()
+  })
+  .then (data => {
+    console.log(data)
+    this.context.addUser(data)
+    this.props.history.push('/profile')
+  })
+  .catch(error=>{
+    this.setState({ error })
+  })
 }
 
 render () {
-    return (
-      <form className="registration" onSubmit={e => this.handleSubmit(e)}>
-        <NavBar />
-        <div className="container-login">
-          <input type="text" className="registration__control"
-            name="name" id="name" placeholder="Name..." onChange={e => this.updateName(e.target.value)} />
-           <input type="password" className="registration__control"
-            name="password" id="password" placeholder="Password..." onChange={e => this.updatePassword(e.target.value)}/>
-         <button type="reset" className="registration__button">
-             Cancel
-         </button>
-         <button 
-          type="submit"
-          className="registration__button"
-          >
-             Register
-         </button>
-        </div>
-      </form>
+  return (
+    <form className="registration" onSubmit={e => this.handleUserSubmit(e)}>
+    <NavBar />
+    <div className="container-login">
+    <input 
+    type="text" 
+    className="name"
+    name="name" 
+    id="name" 
+    placeholder="Name..." />
+    <input 
+    type="password" 
+    className="password"
+    name="password" 
+    id="password" 
+    placeholder="Password..."/>
+    <button 
+    type="reset" 
+    className="registration__button">
+    Cancel
+    </button>
+    <button 
+    type="submit"
+    className="registration__button">
+    Register
+    </button>
+    </div>
+    </form>
     )
   }
 }
