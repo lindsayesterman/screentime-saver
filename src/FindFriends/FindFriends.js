@@ -19,15 +19,24 @@ export default class FindFriends extends React.Component{
       className="search-bar" 
       placeholder="Search..">
       </input> 
+      <button 
+      type="submit">
+        Search
+      </button>
+      <ul>
       {users.map(user =>
-        <ul key={user.id}>
+      <Link 
+      to={`/user/${user.id}`}
+      style={{ textDecoration: 'none' }}
+      key={user.id}>
         <User
         user_name = {user.user_name}
         key={user.id}
         {...user}
         /> 
-        </ul>
+        </Link>
         )}
+        </ul>
         </div>
         );
       }
