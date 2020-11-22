@@ -1,13 +1,10 @@
 import React from 'react'
 import Friends from '../Friends/Friends'
-import UsersContext from '../usersContext'
 
 export default class FriendsList extends React.Component{
-  
-    static contextType = UsersContext;
     
     render(){
-      const { friends = [] } = this.props
+        const { friends = [] } = this.props
         return (
             <ul>
             {friends.map(friend =>
