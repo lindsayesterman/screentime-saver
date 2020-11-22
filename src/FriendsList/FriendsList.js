@@ -1,6 +1,7 @@
 import React from 'react'
 import Friends from '../Friends/Friends'
 import UsersContext from '../usersContext'
+import NavBar from '../NavBar/NavBar'
 
 export default class FriendsList extends React.Component{
     
@@ -9,6 +10,8 @@ export default class FriendsList extends React.Component{
     render(){
         const { friends = [] } = this.props
         return (
+            <>
+            <NavBar/>
             <ul>
             {this.context.friends.map(friend =>
                 <Friends
@@ -18,6 +21,7 @@ export default class FriendsList extends React.Component{
                 /> 
                 )}
                 </ul>
+                </>
                 )
             }
         }
