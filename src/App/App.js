@@ -15,6 +15,7 @@ class App extends React.Component{
       users: [],
       user: {},
       friends: [],
+      friend: {},
       scrtimes: [],
       error: null
     };
@@ -87,9 +88,9 @@ addScrtime = scrtime => {
           user
         })
       },
-      addFriend: (friends) => {
+      addFriend: (friend) => {
         this.setState({
-          friends
+          friend
         })
       },
       addScrtime: () => {},
