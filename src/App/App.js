@@ -66,6 +66,9 @@ addUser = user => {
 }
 
 addFriend = friend => {
+  console.log(`friends state -- ${this.state.friends}`)
+  console.log(`new friend -- ${friend}`)
+  console.log(`new friend -- ${JSON.stringify(friend)}`)
   this.setState({
     friends: [ ...this.state.friends, friend ],
   })
@@ -89,9 +92,7 @@ addScrtime = scrtime => {
         })
       },
       addFriend: (friend) => {
-        this.setState({
-          friend
-        })
+        this.addFriend(friend)
       },
       addScrtime: () => {},
       deleteScrtime: () => {},
