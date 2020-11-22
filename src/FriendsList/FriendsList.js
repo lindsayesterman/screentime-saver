@@ -8,6 +8,7 @@ export default class FriendsList extends React.Component{
     
     render(){
       const { friends = [] } = this.props
+      console.log(friend.friend_name)
         return (
             <ul>
             {friends.map(friend =>

@@ -28,6 +28,7 @@ export default class User extends React.Component{
   })
   .then (data => {
     console.log(data)
+    console.log(friend.friend_name)
     this.context.addFriend(data)
     this.props.history.push('/friends')
   })

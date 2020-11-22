@@ -6,7 +6,7 @@ import Profile from '../Profile/Profile'
 import FindFriends from '../FindFriends/FindFriends'
 import './App.css'
 import UsersContext from '../usersContext'
-import Friends from '../Friends/Friends'
+import FriendsList from '../FriendsList/FriendsList'
 
 class App extends React.Component{
   constructor(props){
@@ -144,7 +144,7 @@ addScrtime = scrtime => {
         path='/friends'
         render={routeProps => {
           return(
-            <Friends
+            <FriendsList
             friends={context.friends}
             {...routeProps}
             /> 
