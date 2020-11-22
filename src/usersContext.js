@@ -4,7 +4,9 @@ const UsersContext = React.createContext({
   users: [],
   scrtimes: [],
   user: {},
+  friends: [],
   addUser: () => {},
+  addFriend: () => {},
   addScrtime: () => {},
   deleteScrtime: () => {},
 })

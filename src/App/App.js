@@ -6,6 +6,7 @@ import Profile from '../Profile/Profile'
 import FindFriends from '../FindFriends/FindFriends'
 import './App.css'
 import UsersContext from '../usersContext'
+import Friends from '../Friends/Friends'
 
 class App extends React.Component{
   constructor(props){
@@ -13,6 +14,7 @@ class App extends React.Component{
     this.state={
       users: [],
       user: {},
+      friends: [],
       scrtimes: [],
       error: null
     };
@@ -62,6 +64,12 @@ addUser = user => {
   })
 }
 
+addFriend = friend => {
+  this.setState({
+    friends: [ ...this.state.friends, friend ],
+  })
+}
+
 addScrtime = scrtime => {
   this.setState({
     scrtime: [ ...this.state.scrtimes, scrtime ],
@@ -73,9 +81,15 @@ addScrtime = scrtime => {
       users: this.state.users,
       user: this.state.user,
       scrtimes: this.state.scrtimes,
+      friends: this.state.friends,
       addUser: (user) => {
         this.setState({
           user
+        })
+      },
+      addFriend: (friends) => {
+        this.setState({
+          friends
         })
       },
       addScrtime: () => {},
@@ -115,11 +129,22 @@ addScrtime = scrtime => {
         }}
         />
         <Route
-        path='/friends'
+        path='/findfriends'
         render={routeProps => {
           return(
             <FindFriends
             users={context.users}
+            {...routeProps}
+            /> 
+            )
+          }}
+          />
+        <Route
+        path='/friends'
+        render={routeProps => {
+          return(
+            <Friends
+            friends={context.friends}
             {...routeProps}
             /> 
             )
