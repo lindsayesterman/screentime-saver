@@ -44,7 +44,7 @@ export default class User extends React.Component{
                 <h3>{this.props.name}</h3>
                 <h3>{this.props.bio}</h3>
                 <button onClick={e => this.handleFriendRequest(e)}>
-                    Add Friend
+                    {this.props.text}
                 </button>
             </li>
         )

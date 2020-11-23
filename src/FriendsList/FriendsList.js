@@ -8,7 +8,6 @@ export default class FriendsList extends React.Component{
     static contextType = UsersContext;
 
     render(){
-        const { friends = [] } = this.props
         return (
             <>
             <NavBar/>
@@ -16,6 +15,7 @@ export default class FriendsList extends React.Component{
             {this.context.friends.map(friend =>
                 <User 
                 name = {friend.friend_name}
+                text = "Remove Friend"
                 key={friend.id}
                 {...friend}
                 /> 
