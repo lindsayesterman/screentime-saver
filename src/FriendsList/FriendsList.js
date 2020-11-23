@@ -1,7 +1,7 @@
 import React from 'react'
-import Friends from '../Friends/Friends'
 import UsersContext from '../usersContext'
 import NavBar from '../NavBar/NavBar'
+import User from '../User/User'
 
 export default class FriendsList extends React.Component{
     
@@ -14,8 +14,8 @@ export default class FriendsList extends React.Component{
             <NavBar/>
             <ul>
             {this.context.friends.map(friend =>
-                <Friends
-                friend_name = {friend.friend_name}
+                <User 
+                name = {friend.friend_name}
                 key={friend.id}
                 {...friend}
                 /> 
