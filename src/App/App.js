@@ -95,7 +95,11 @@ class App extends React.Component {
       addFriend: (friend) => {
         this.addFriend(friend);
       },
-      addScrtime: () => {},
+      addScrTime: (scrtime) => {
+        this.setState({
+          scrtime,
+        });
+      },
       deleteScrtime: () => {},
     };
     return (
