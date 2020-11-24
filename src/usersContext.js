@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const UsersContext = React.createContext({
   users: [],
@@ -10,6 +10,6 @@ const UsersContext = React.createContext({
   addFriend: () => {},
   addScrtime: () => {},
   deleteScrtime: () => {},
-})
+});
 
 export default UsersContext;
