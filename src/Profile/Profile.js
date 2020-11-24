@@ -7,15 +7,14 @@ export default class Profile extends React.Component {
   static contextType = UsersContext;
 
   render() {
-    //const totalScrTime = (this.context.scrtime.day_1) + (this.context.scrtime.day_2) +(this.context.scrtime.day_3) + (this.context.scrtime.day_4) + (this.context.scrtime.day_5) + (this.context.scrtime.day_6) +(this.context.scrtime.day_7) 
-    console.log(this.context.scrtime.day_1);
+    const totalScrTime = parseFloat(this.context.scrtime.day_1) + parseFloat(this.context.scrtime.day_2) +parseFloat(this.context.scrtime.day_3) + parseFloat(this.context.scrtime.day_4) + parseFloat(this.context.scrtime.day_5) + parseFloat(this.context.scrtime.day_6) +parseFloat(this.context.scrtime.day_7) 
     return (
       <>
         <NavBar />
         <div className="profile-info">
           <h3>Name: {this.context.user.user_name} </h3>
           <h3>About: {this.context.user.user_bio} </h3>
-          <h3>Total weeks screentime: </h3>
+          <h3>Total weeks screentime: {totalScrTime} </h3>
         </div>
       </>
     );
