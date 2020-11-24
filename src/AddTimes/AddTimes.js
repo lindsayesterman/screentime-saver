@@ -11,7 +11,7 @@ export default class AddTimes extends React.Component {
 
   handleScrSubmit = (e) => {
     e.preventDefault();
-    const week = {
+    const scrtime = {
       day_1: e.target["sun"].value,
       day_2: e.target["mon"].value,
       day_3: e.target["tues"].value,
@@ -25,7 +25,7 @@ export default class AddTimes extends React.Component {
     this.setState({ error: null });
     fetch(`http://localhost:8000/api/scrtimes`, {
       method: "POST",
-      body: JSON.stringify(week),
+      body: JSON.stringify(scrtime),
       headers: {
         "content-type": "application/json",
       },

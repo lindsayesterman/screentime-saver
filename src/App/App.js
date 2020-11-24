@@ -9,7 +9,7 @@ import UsersContext from "../usersContext";
 import FriendsList from "../FriendsList/FriendsList";
 import PrivateRoute from "../Utils/PrivateRoute";
 import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
-import AddTimes from '../AddTimes/AddTimes'
+import AddTimes from "../AddTimes/AddTimes";
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +20,7 @@ class App extends React.Component {
       friends: [],
       friend: {},
       scrtimes: [],
+      scrtime: {},
       error: null,
     };
   }
@@ -84,6 +85,7 @@ class App extends React.Component {
       users: this.state.users,
       user: this.state.user,
       scrtimes: this.state.scrtimes,
+      scrtime: this.state.scrtime,
       friends: this.state.friends,
       addUser: (user) => {
         this.setState({
@@ -132,7 +134,13 @@ class App extends React.Component {
           <Route
             path="/profile"
             render={(routeProps) => {
-              return <Profile name={this.state.user_name} {...routeProps} />;
+              return (
+                <Profile
+                  name={this.state.user_name}
+                  day_1={this.state.day_1}
+                  {...routeProps}
+                />
+              );
             }}
           />
           <Route
@@ -147,10 +155,10 @@ class App extends React.Component {
               return <FriendsList friends={context.friends} {...routeProps} />;
             }}
           />
-            <Route
+          <Route
             path="/addtimes"
             render={(routeProps) => {
-              return <AddTimes {...routeProps} />
+              return <AddTimes {...routeProps} />;
             }}
           />
         </div>
