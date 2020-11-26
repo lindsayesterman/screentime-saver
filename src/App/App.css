@@ -38,12 +38,18 @@ img {
     width:50%;
     width:540px;
     height:520px;
+    animation-name:iphone;
+    animation-duration: 2s;
 }
 
 .about {
     width:70%;
     margin: 0 auto;
     margin-bottom:65px;
+}
+
+@keyframes iphone {
+    100% {width:650px; height:580px;};
 }
 
 @media only screen and (max-width: 400px){
