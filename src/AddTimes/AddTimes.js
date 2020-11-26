@@ -19,7 +19,7 @@ export default class AddTimes extends React.Component {
       day_5: e.target["thurs"].value,
       day_6: e.target["fri"].value,
       day_7: e.target["sat"].value,
-      user_id: 1,
+      user_id: e.target["user_id"].value,
       date_created: new Date(),
     };
     this.setState({ error: null });
@@ -41,12 +41,12 @@ export default class AddTimes extends React.Component {
       .then((data) => {
         console.log(data);
         this.context.addScrTime(data);
-        this.props.history.push("/profile");
+        this.props.history.push("/profile/:user_id")
       })
       .catch((error) => {
         this.setState({ error });
       });
-  };
+  }; 
 
   render() {
     return (
@@ -64,6 +64,7 @@ export default class AddTimes extends React.Component {
           ></input>
           <input placeholder="Friday Screentime" name="fri" id="fri"></input>
           <input placeholder="Saturday Screentime" name="sat" id="sat"></input>
+          <input placeholder="User ID" name="user_id" id="user_id"></input>
           <button type="submit">Submit this weeks screentimes!</button>
         </form>
       </>

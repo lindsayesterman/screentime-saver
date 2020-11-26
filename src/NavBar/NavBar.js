@@ -8,10 +8,10 @@ export default function NavBar(props) {
       <Link to="/">
         <h1 className="title">Screentime Saver</h1>
       </Link>
-      <Link to="/profile">
+      <Link to="/profile/:user_id">
         <h4 className="profile">Account</h4>
       </Link>
-      <Link to="/findfriends">
+      <Link to="/users">
         <h4 className="connect">Connect</h4>
       </Link>
       <Link to="/friends">

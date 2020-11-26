@@ -4,56 +4,62 @@
     color:black;
 }
 
-h1, h3.front-sign-up{
-    display:inline-block;
-}
-
-h1{
-    float:left;
-    margin:30px;
-}
-
-h3.front-sign-up{
+ul.navbar {
+    list-style:none;
     text-align:right;
-    margin:38px;
-    float:right;
-    text-decoration: underline;
+}
+
+ul li {
+    margin:0px 15px;
+    display:inline-block;
 }
 
 h2.front-quote{
     position: absolute;
-    width:35%;
-    top:45%;
     left:50%;
-    width:30%;
-    transform: translate(-50%);
+    top:45%;
+    transform: translate(-50%, -50%);
+    width:24%;
     z-index:2;
     background-color: transparent;
     color:white;
     font-size:19px;
 }
 
+.container-front{
+    position: relative;
+    text-align: center;
+}
+
 img {
-    position: absolute;
-    width:35%;
-    top:9%;
-    left:50%;
-    transform: translate(-50%); 
-    width:100%;
-    height:100%;
+    position:relative;
+    display:block;
+    margin:0 auto;
+    width:50%;
+    width:540px;
+    height:520px;
 }
 
 .about {
-    position:absolute;
-    top:90%;
-    left:50%;
     width:70%;
-    transform: translate(-50%); 
+    margin: 0 auto;
+    margin-bottom:65px;
 }
 
-@media only screen and (min-width: 800px){
+@media only screen and (max-width: 400px){
     img {
-        width:55%;
-        height:103%;
+        transform: rotate(270deg);
+        width:100%;
+    }
+
+    ul.navbar li {
+        font-size:13px;
+        margin: 8px 8px;
+    }
+
+    h2.front-quote{
+        width:30%;
+        left:50%;
+        font-size:16px;
     }
 }

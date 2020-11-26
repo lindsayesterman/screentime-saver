@@ -10,12 +10,12 @@ input.search-bar{
     padding:8px;
 }
 
-ul {
+ul.findfriends {
     margin: 0px auto;
     width:70%;
 }
 
-ul li {
+ul.findfriends li {
     list-style: none;
     border: 1px solid gray;
     height:120px;

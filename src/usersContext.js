@@ -7,9 +7,11 @@ const UsersContext = React.createContext({
   user: {},
   friends: [],
   friend: {},
+  logged_in: {},
   addUser: () => {},
   addFriend: () => {},
   addScrtime: () => {},
+  deleteFriend: () => {},
   deleteScrtime: () => {},
 });
 
