@@ -13,7 +13,7 @@ export default class Compare extends React.Component {
   static contextType = UsersContext;
 
   render() {
-    const { friends = [], scrtimes = [] } = this.context;
+    const { friends = [], scrtimes = [], logged_in = [] } = this.context;
     const { friendId } = this.props.match.params;
     const { scrtimeId } = this.props.match.params;
     const friend = findFriend(friends, parseFloat(friendId)) || { friend_name: "" };
@@ -35,7 +35,7 @@ export default class Compare extends React.Component {
           <table>
             <tr>
               <th>{friend.friend_name}</th>
-              <th>{friend.friend_name}</th>
+              <th>{logged_in.user_name || "still not working"}</th>
             </tr>
             {/*
             <tr>

@@ -14,7 +14,7 @@ export default class Profile extends React.Component {
   static contextType = UsersContext;
 
   render() {
-    const { users = [], scrtimes = [], logged_in= {} } = this.context;
+    const { users = [], scrtimes = [], logged_in = {} } = this.context;
     const { userId } = this.props.match.params;
     const { scrtimeId } = this.props.match.params;
     const user = findUser(users, parseFloat(userId)) || { user_name: "" };

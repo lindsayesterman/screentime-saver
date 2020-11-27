@@ -39,7 +39,7 @@ img {
     width:540px;
     height:520px;
     animation-name:iphone;
-    animation-duration: 2s;
+    animation-duration: 3.5s;
 }
 
 .about {
@@ -49,7 +49,8 @@ img {
 }
 
 @keyframes iphone {
-    100% {width:650px; height:580px;};
+    50% {width:650px; height:580px;};
+    100% {width:540px; height:520px;};
 }
 
 @media only screen and (max-width: 400px){
@@ -67,5 +68,9 @@ img {
         width:30%;
         left:50%;
         font-size:16px;
+    }
+
+    @keyframes iphone {
+        50% {width:100%;};
     }
 }

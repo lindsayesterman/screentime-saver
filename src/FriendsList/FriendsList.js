@@ -45,7 +45,7 @@ export default class FriendsList extends React.Component {
         <NavBar />
         <ul className="findfriends">
         {this.context.friends.map(friend =>
-            <Link to={`/friends/${friend.id}`} key={friend.id}>
+            <Link to={`/compare/${friend.id}`} key={friend.id}>
               <User
                 name={friend.friend_name}
                 text="Remove Friend"

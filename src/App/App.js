@@ -82,9 +82,9 @@ class App extends React.Component {
     });
   };
 
-  addFriend = (friend) => {
+  addLoggedIn = (logged_in) => {
     this.setState({
-      friends: [...this.state.friends, friend],
+      logged_in: [...this.state.logged_in, logged_in],
     });
   };
 
@@ -112,6 +112,11 @@ class App extends React.Component {
       deleteFriend: (friend) => {
         this.setState({
           friend,
+        });
+      },
+      addLoggedIn: (logged_in) => {
+        this.setState({
+          logged_in,
         });
       },
       deleteScrtime: () => {},
@@ -152,8 +157,8 @@ class App extends React.Component {
               <p>
                 Screentime-saver is an app that allows users to input phone
                 screentimes every day and compete with friends for the lowest
-                weekly average. Create groups of friends and each week the group
-                member with the lowest average weekly screentime is announced!
+                weekly average. Connect with friends and each week the friend 
+                with the lowest weekly screentime is announced!
               </p>
             </div>
           </Route>
@@ -178,7 +183,7 @@ class App extends React.Component {
             }}
           />
           <Route path="/profile/:userId" component={Profile} />
-          <Route path="/friends/:friendId" component={Compare} />
+          <Route path="/compare/:friendId" component={Compare} />
         </div>
       </UsersContext.Provider>
     );
