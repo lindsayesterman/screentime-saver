@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
-import UsersContext from '../usersContext'
+import UsersContext from "../usersContext";
 
 export default class AddTimes extends React.Component {
   state = {
@@ -41,12 +41,12 @@ export default class AddTimes extends React.Component {
       .then((data) => {
         console.log(data);
         this.context.addScrTime(data);
-        this.props.history.push("/profile/:user_id")
+        this.props.history.push(`/profile/${data.user_id}`);
       })
       .catch((error) => {
         this.setState({ error });
       });
-  }; 
+  };
 
   render() {
     return (
@@ -57,11 +57,7 @@ export default class AddTimes extends React.Component {
           <input placeholder="Monday Screentime" name="mon" id="mon"></input>
           <input placeholder="Tuesday Screentime" name="tues" id="tues"></input>
           <input placeholder="Wednesday Screentime" name="wed" id="wed"></input>
-          <input
-            placeholder="Thursday Screentime"
-            name="thurs"
-            id="thurs"
-          ></input>
+          <input placeholder="Thursday Screentime" name="thurs" id="thurs"></input>
           <input placeholder="Friday Screentime" name="fri" id="fri"></input>
           <input placeholder="Saturday Screentime" name="sat" id="sat"></input>
           <input placeholder="User ID" name="user_id" id="user_id"></input>

@@ -16,17 +16,17 @@ export default class Profile extends React.Component {
   render() {
     const { users = [], scrtimes = [], logged_in = {} } = this.context;
     const { userId } = this.props.match.params;
-    const { scrtimeId } = this.props.match.params;
+    const { scrtimeUserId } = this.props.match.params;
     const user = findUser(users, parseFloat(userId)) || { user_name: "" };
-    const scrtime = findScrtime(scrtimes, parseFloat(scrtimeId))
-    /*const totalScrTime =
+    const scrtime = findScrtime(scrtimes, parseFloat(userId)) || { day_1: "" }
+    const totalScrTime =
       parseFloat(scrtime.day_1) +
       parseFloat(scrtime.day_2) +
       parseFloat(scrtime.day_3) +
       parseFloat(scrtime.day_4) +
       parseFloat(scrtime.day_5) +
       parseFloat(scrtime.day_6) +
-      parseFloat(scrtime.day_7);*/
+      parseFloat(scrtime.day_7);
     return (
       <>
         <NavBar />
@@ -36,6 +36,7 @@ export default class Profile extends React.Component {
           <h3>Total week's screentime: {totalScrTime || ""} </h3>*/}
           <h3>Name: {user.user_name || logged_in.user_name } </h3>
           <h3>About: {user.user_bio} </h3>
+          <h3>Weekly screentime: {totalScrTime}</h3>
         </div>
       </>
     );
