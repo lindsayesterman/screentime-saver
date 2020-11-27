@@ -25,7 +25,7 @@ export default class Profile extends React.Component {
       parseFloat(scrtime.day_3) +
       parseFloat(scrtime.day_4) +
       parseFloat(scrtime.day_5) +
-      parseFloat(scrtime.day_6) +
+      parseFloat(scrtime.day_6) + 
       parseFloat(scrtime.day_7);
     return (
       <>

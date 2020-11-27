@@ -9,6 +9,7 @@ export default class User extends React.Component {
     e.preventDefault();
     const friend = {
       friend_name: this.props.name,
+      friend_user_id: this.props.id,
       date_created: new Date(),
     };
     this.setState({ error: null });
@@ -28,8 +29,7 @@ export default class User extends React.Component {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
-        console.log(friend.friend_name);
+        console.log(data)
         this.context.addFriend(data);
         this.props.history.push("/friends");
       })

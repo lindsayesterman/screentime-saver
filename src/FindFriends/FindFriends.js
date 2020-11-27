@@ -28,6 +28,7 @@ export default class FindFriends extends React.Component {
               name={user.user_name}
               bio={user.user_bio}
               text="Add Friend"
+              id = {user.id}
               key={user.id}
               {...user}
               /> 

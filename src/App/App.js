@@ -183,7 +183,7 @@ class App extends React.Component {
             }}
           />
           <Route path="/profile/:userId" component={Profile} />
-          <Route path="/compare/:friendId" component={Compare} />
+          <Route path="/compare/:friendUserId" component={Compare} />
         </div>
       </UsersContext.Provider>
     );
