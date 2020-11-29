@@ -184,11 +184,16 @@ class App extends React.Component {
           <Route
             path="/addtimes"
             render={(routeProps) => {
-              return <AddTimes {...routeProps} />;
+              return <AddTimes logged_in={context.logged_in} {...routeProps} />;
             }}
           />
           <Route path="/profile/:userId" component={Profile} />
-          <Route path="/compare/:friendUserId" component={Compare} />
+          <Route
+            path="/compare/:friendUserId"
+            render={(routeProps) => {
+              return <Compare logged_in={context.logged_in} {...routeProps} />;
+            }}
+          />
         </div>
       </UsersContext.Provider>
     );

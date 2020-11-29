@@ -19,9 +19,7 @@ export default class Compare extends React.Component {
     const friend = findFriend(friends, (friendUserId + "")) || {
       friend_name: "",
     };
-    console.log(friendUserId)
-    console.log(friends)
-    console.log(friend)
+    console.log(logged_in)
     const scrtime = findScrtime(scrtimes, parseFloat(friendUserId)) || {
       day_1: "",
     };
@@ -33,6 +31,8 @@ export default class Compare extends React.Component {
       parseFloat(scrtime.day_5) +
       parseFloat(scrtime.day_6) +
       parseFloat(scrtime.day_7);
+      const friendNoValues = friend.friend_name+" hasn't filled in this week's values yet!";
+      const userNoValues = "fill in this weeks values!";
     return (
       <>
         <NavBar />
@@ -42,39 +42,39 @@ export default class Compare extends React.Component {
             <tbody>
               <tr>
                 <th>{friend.friend_name}</th>
-                <th>{logged_in.user_name || "still not working"}</th>
+                <th>{logged_in.user_name}</th>
               </tr>
               <tr>
-                <td>{scrtime.day_1}</td>
-                <td>my hours</td>
+                <td>{scrtime.day_1 || friendNoValues}</td>
+                <td>{logged_in.day_1 || userNoValues}</td>
               </tr>
               <tr>
-                <td>{scrtime.day_2}</td>
-                <td>my hours</td>
+                <td>{scrtime.day_2 || friendNoValues}</td>
+                <td>{logged_in.day_1 || userNoValues}</td>
               </tr>
               <tr>
-                <td>{scrtime.day_3}</td>
-                <td>my hours</td>
+                <td>{scrtime.day_3 || friendNoValues}</td>
+                <td>{logged_in.day_1 || userNoValues}</td>
               </tr>
               <tr>
-                <td>{scrtime.day_4}</td>
-                <td>my hours</td>
+                <td>{scrtime.day_4 || friendNoValues}</td>
+                <td>{logged_in.day_1 || userNoValues}</td>
               </tr>
               <tr>
-                <td>{scrtime.day_5}</td>
-                <td>my hours</td>
+                <td>{scrtime.day_5 || friendNoValues}</td>
+                <td>{logged_in.day_1 || userNoValues}</td>
               </tr>
               <tr>
-                <td>{scrtime.day_6}</td>
-                <td>my hours</td>
+                <td>{scrtime.day_6 || friendNoValues}</td>
+                <td>{logged_in.day_1 || userNoValues}</td>
               </tr>
               <tr>
-                <td>{scrtime.day_7}</td>
-                <td> my hours</td>
+                <td>{scrtime.day_7 || friendNoValues}</td>
+                <td>{logged_in.day_1 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{totalScrTime || ""} </td>
-                <td>my total</td>
+                <td>{logged_in.day_1 || ""}</td>
               </tr>
             </tbody>
           </table>
