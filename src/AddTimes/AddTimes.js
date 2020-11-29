@@ -51,7 +51,7 @@ export default class AddTimes extends React.Component {
   render() {
     return (
       <>
-        <NavBar />
+        <NavBar  logged_in={this.context.logged_in} />
         <h4>Round to the nearest hour:</h4>
         <form onSubmit={(e) => this.handleScrSubmit(e)}>
           <input placeholder="Sunday Screentime" name="sun" id="sun"></input>

@@ -29,7 +29,7 @@ export default class Profile extends React.Component {
       parseFloat(scrtime.day_7);
     return (
       <>
-        <NavBar />
+        <NavBar  logged_in={this.context.logged_in} />
         <div className="profile-info">
           {/*<h3>Name: {this.context.user.user_name} </h3>
           <h3>About: {this.context.user.user_bio} </h3>

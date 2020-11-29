@@ -35,7 +35,7 @@ export default class Compare extends React.Component {
       const userNoValues = "fill in this weeks values!";
     return (
       <>
-        <NavBar />
+        <NavBar  logged_in={this.context.logged_in} />
         <div className="compare">
           <h3>Total week's screentime: {totalScrTime} </h3>
           <table>

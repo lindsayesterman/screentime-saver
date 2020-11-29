@@ -43,7 +43,7 @@ class Login extends React.Component {
   render() {
     return (
       <>
-        <NavBar />
+        <NavBar  logged_in={this.context.logged_in} />
         <form
           className="registration"
           onSubmit={(e) => this.handleSubmitJwtAuth(e)}

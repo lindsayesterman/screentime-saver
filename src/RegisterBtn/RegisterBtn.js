@@ -50,7 +50,7 @@ class Register extends React.Component {
   render() {
     return (
       <form className="registration" onSubmit={(e) => this.handleUserSubmit(e)}>
-        <NavBar />
+        <NavBar  logged_in={this.context.logged_in} />
         <div className="container-login">
           <input
             type="text"

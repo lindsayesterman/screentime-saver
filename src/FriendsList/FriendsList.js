@@ -10,7 +10,7 @@ export default class FriendsList extends React.Component {
   render() {
     return (
       <>
-        <NavBar />
+        <NavBar  logged_in={this.context.logged_in} />
         <ul className="findfriends">
         {this.context.friends.map(friend =>
             <Link to={`/compare/${friend.friend_user_id}`} key={friend.id}>
