@@ -7,7 +7,8 @@ export default class NavBar extends React.Component {
   static contextType = UsersContext;
 
   render() {
-    const { logged_in = {} } = this.props;
+    const { logged_in = {} } = this.context;
+    console.log(this.context.logged_in)
     return (
       <div className="nav-bar">
         <Link to="/">

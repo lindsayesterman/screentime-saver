@@ -12,7 +12,7 @@ export default class FindFriends extends React.Component {
     const { users = [] } = this.props;
     return (
       <div className="App">
-        <NavBar/>
+        <NavBar logged_in={this.context.logged_in} />
         <input
           type="search"
           className="search-bar"
