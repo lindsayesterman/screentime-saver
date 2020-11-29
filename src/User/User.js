@@ -1,6 +1,5 @@
 import React from "react";
 import UsersContext from "../usersContext";
-import { Link } from 'react-router-dom'
 
 export default class User extends React.Component {
   static contextType = UsersContext;

@@ -4,7 +4,6 @@ import NavBar from "../NavBar/NavBar.js";
 import "./LoginBtn.css";
 import TokenService from "../services/token-service";
 import AuthApiService from "../services/auth-api-service";
-import { Button, Input } from "../Utils/Utils";
 
 class Login extends React.Component {
   static defaultProps = {

@@ -7,8 +7,8 @@ import FindFriends from "../FindFriends/FindFriends";
 import "./App.css";
 import UsersContext from "../usersContext";
 import FriendsList from "../FriendsList/FriendsList";
-import PrivateRoute from "../Utils/PrivateRoute";
-import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
+//import PrivateRoute from "../Utils/PrivateRoute";
+//import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
 import AddTimes from "../AddTimes/AddTimes";
 import Compare from "../Compare/Compare";
 
@@ -157,12 +157,17 @@ class App extends React.Component {
               <p>
                 Screentime-saver is an app that allows users to input phone
                 screentimes every day and compete with friends for the lowest
-                weekly average. Connect with friends and each week the friend 
+                weekly average. Connect with friends and each week the friend
                 with the lowest weekly screentime is announced!
               </p>
             </div>
           </Route>
-          <Route path="/register" component={Register} />
+          <Route
+            path="/register"
+            render={(routeProps) => {
+              return <Register logged_in={context.logged_in} {...routeProps} />;
+            }}
+          />
           <Route path="/login" component={Login} />
           <Route
             path="/users"

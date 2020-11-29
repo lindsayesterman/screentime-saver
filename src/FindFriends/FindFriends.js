@@ -1,7 +1,7 @@
 import React from "react";
 import "./FindFriends.css";
 import NavBar from "../NavBar/NavBar.js";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import UsersContext from "../usersContext";
 import User from "../User/User";
 
@@ -12,7 +12,7 @@ export default class FindFriends extends React.Component {
     const { users = [] } = this.props;
     return (
       <div className="App">
-        <NavBar />
+        <NavBar/>
         <input
           type="search"
           className="search-bar"

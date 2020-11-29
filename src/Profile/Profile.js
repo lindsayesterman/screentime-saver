@@ -16,7 +16,7 @@ export default class Profile extends React.Component {
   render() {
     const { users = [], scrtimes = [], logged_in = {} } = this.context;
     const { userId } = this.props.match.params;
-    const { scrtimeUserId } = this.props.match.params;
+    console.log(logged_in);
     const user = findUser(users, parseFloat(userId)) || { user_name: "" };
     const scrtime = findScrtime(scrtimes, parseFloat(userId)) || { day_1: "" }
     const totalScrTime =
