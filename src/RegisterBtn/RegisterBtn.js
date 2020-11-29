@@ -37,9 +37,7 @@ class Register extends React.Component {
         console.log(data);
         this.context.addUser(data);
         this.context.addLoggedIn(data);
-        console.log(this.context.logged_in)
         this.setState({ logged_in: data })
-        console.log(this.props.logged_in)
         this.props.history.push(`/profile/${data.id}`);
       })
       .catch((error) => {

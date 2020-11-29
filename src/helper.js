@@ -6,3 +6,7 @@ friends.find((friend) => friend.friend_user_id === friendUserId);
 
 export const findScrtime = (scrtimes = [], scrtimeUserId) =>
 scrtimes.find((scrtime) => scrtime.user_id === scrtimeUserId);
+
+export const findMyScrtime = (scrtimes = [], myscrtimeUserId) =>
+scrtimes.find((scrtime) => scrtime.user_id === myscrtimeUserId)
+

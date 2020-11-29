@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar.js";
 import UsersContext from "../usersContext";
-import { findFriend, findScrtime } from "../helper.js";
+import { findFriend, findMyScrtime, findScrtime } from "../helper.js";
 import "./Compare.css";
 
 export default class Compare extends React.Component {
@@ -19,10 +19,14 @@ export default class Compare extends React.Component {
     const friend = findFriend(friends, (friendUserId + "")) || {
       friend_name: "",
     };
-    console.log(logged_in)
     const scrtime = findScrtime(scrtimes, parseFloat(friendUserId)) || {
       day_1: "",
     };
+    const myScrtime = findMyScrtime(scrtimes, logged_in.id) || {
+      day_1: "",
+    };
+    console.log(myScrtime)
+    console.log(scrtimes)
     const totalScrTime =
       parseFloat(scrtime.day_1) +
       parseFloat(scrtime.day_2) +
@@ -33,6 +37,7 @@ export default class Compare extends React.Component {
       parseFloat(scrtime.day_7);
       const friendNoValues = friend.friend_name+" hasn't filled in this week's values yet!";
       const userNoValues = "fill in this weeks values!";
+      console.log(myScrtime.day_1);
     return (
       <>
         <NavBar  logged_in={this.context.logged_in} />
@@ -46,31 +51,31 @@ export default class Compare extends React.Component {
               </tr>
               <tr>
                 <td>{scrtime.day_1 || friendNoValues}</td>
-                <td>{logged_in.day_1 || userNoValues}</td>
+                <td>{myScrtime.day_1 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{scrtime.day_2 || friendNoValues}</td>
-                <td>{logged_in.day_1 || userNoValues}</td>
+                <td>{logged_in.day_2 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{scrtime.day_3 || friendNoValues}</td>
-                <td>{logged_in.day_1 || userNoValues}</td>
+                <td>{logged_in.day_3 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{scrtime.day_4 || friendNoValues}</td>
-                <td>{logged_in.day_1 || userNoValues}</td>
+                <td>{logged_in.day_4 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{scrtime.day_5 || friendNoValues}</td>
-                <td>{logged_in.day_1 || userNoValues}</td>
+                <td>{logged_in.day_5 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{scrtime.day_6 || friendNoValues}</td>
-                <td>{logged_in.day_1 || userNoValues}</td>
+                <td>{logged_in.day_6 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{scrtime.day_7 || friendNoValues}</td>
-                <td>{logged_in.day_1 || userNoValues}</td>
+                <td>{logged_in.day_7 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{totalScrTime || ""} </td>
