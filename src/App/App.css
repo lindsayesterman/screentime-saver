@@ -16,10 +16,10 @@ ul li {
 
 h2.front-quote{
     position: absolute;
-    left:50%;
+    left:49%;
     top:45%;
     transform: translate(-50%, -50%);
-    width:24%;
+    width:27%;
     z-index:2;
     background-color: transparent;
     color:white;
@@ -36,8 +36,8 @@ img {
     display:block;
     margin:0 auto;
     width:50%;
-    width:540px;
-    height:520px;
+    width:630px;
+    height:440px;
     animation-name:iphone;
     animation-duration: 3.5s;
 }
@@ -49,14 +49,16 @@ img {
 }
 
 @keyframes iphone {
-    50% {width:650px; height:580px;};
-    100% {width:540px; height:520px;};
+    50% {width:660px; height:480px;};
+    100% {width:630px; height:440px;};
 }
 
 @media only screen and (max-width: 400px){
     img {
-        transform: rotate(270deg);
+        transform: rotate(90deg);
+        height:100%;
         width:100%;
+        padding:100px 0px;
     }
 
     ul.navbar li {

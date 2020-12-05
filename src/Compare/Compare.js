@@ -27,6 +27,7 @@ export default class Compare extends React.Component {
     };
     console.log(myScrtime)
     console.log(scrtimes)
+    console.log(logged_in)
     const totalScrTime =
       parseFloat(scrtime.day_1) +
       parseFloat(scrtime.day_2) +
@@ -55,31 +56,31 @@ export default class Compare extends React.Component {
               </tr>
               <tr>
                 <td>{scrtime.day_2 || friendNoValues}</td>
-                <td>{logged_in.day_2 || userNoValues}</td>
+                <td>{myScrtime.day_2 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{scrtime.day_3 || friendNoValues}</td>
-                <td>{logged_in.day_3 || userNoValues}</td>
+                <td>{myScrtime.day_3  || userNoValues}</td>
               </tr>
               <tr>
                 <td>{scrtime.day_4 || friendNoValues}</td>
-                <td>{logged_in.day_4 || userNoValues}</td>
+                <td>{myScrtime.day_4 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{scrtime.day_5 || friendNoValues}</td>
-                <td>{logged_in.day_5 || userNoValues}</td>
+                <td>{myScrtime.day_5 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{scrtime.day_6 || friendNoValues}</td>
-                <td>{logged_in.day_6 || userNoValues}</td>
+                <td>{myScrtime.day_6 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{scrtime.day_7 || friendNoValues}</td>
-                <td>{logged_in.day_7 || userNoValues}</td>
+                <td>{myScrtime.day_7 || userNoValues}</td>
               </tr>
               <tr>
                 <td>{totalScrTime || ""} </td>
-                <td>{logged_in.day_1 || ""}</td>
+                <td>{myScrtime.day_1  || ""}</td>
               </tr>
             </tbody>
           </table>

@@ -11,6 +11,8 @@ import FriendsList from "../FriendsList/FriendsList";
 //import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
 import AddTimes from "../AddTimes/AddTimes";
 import Compare from "../Compare/Compare";
+import iphone from '../iphone.png'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -144,7 +146,7 @@ class App extends React.Component {
             </ul>
             <div className="container-front">
               <img
-                src="https://mockuphone.com/static/images/devices/apple-iphone7plus-silver-landscape.png"
+                src={iphone}
                 alt="iphone"
               ></img>
               <h2 className="front-quote">
