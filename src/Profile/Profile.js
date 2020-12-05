@@ -14,9 +14,8 @@ export default class Profile extends React.Component {
   static contextType = UsersContext;
 
   render() {
-    const { users = [], scrtimes = [], logged_in = {} } = this.context;
+    const { users = [], scrtimes = [] } = this.context;
     const { userId } = this.props.match.params;
-    console.log(logged_in);
     const user = findUser(users, parseFloat(userId)) || { user_name: "" };
     const scrtime = findScrtime(scrtimes, parseFloat(userId)) || { day_1: "" }
     const totalScrTime =
@@ -31,11 +30,8 @@ export default class Profile extends React.Component {
       <>
         <NavBar  logged_in={this.context.logged_in} />
         <div className="profile-info">
-          {/*<h3>Name: {this.context.user.user_name} </h3>
-          <h3>About: {this.context.user.user_bio} </h3>
-          <h3>Total week's screentime: {totalScrTime || ""} </h3>*/}
-          <h3>Name: {user.user_name || logged_in.user_name } </h3>
-          <h3>About: {user.user_bio} </h3>
+          <h3>Name: {user.user_name || this.props.logged_in.user_name } </h3>
+          <h3>About: {user.user_bio || this.props.logged_in.user_bio }  </h3>
           <h3>Weekly screentime: {totalScrTime}</h3>
         </div>
       </>

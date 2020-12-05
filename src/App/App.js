@@ -180,7 +180,7 @@ class App extends React.Component {
           <Route
             path="/friends"
             render={(routeProps) => {
-              return <FriendsList friends={context.friends} {...routeProps} />;
+              return <FriendsList friends={context.friends} scrtimes={context.scrtimes} {...routeProps} />;
             }}
           />
           <Route
@@ -189,7 +189,12 @@ class App extends React.Component {
               return <AddTimes logged_in={context.logged_in} {...routeProps} />;
             }}
           />
-          <Route path="/profile/:userId" component={Profile} />
+          <Route
+            path="/profile/:userId"
+            render={(routeProps) => {
+              return <Profile logged_in={context.logged_in} {...routeProps} />;
+            }}
+          />
           <Route
             path="/compare/:friendUserId"
             render={(routeProps) => {
