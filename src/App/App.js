@@ -59,7 +59,7 @@ class App extends React.Component {
     });
   };
 
-  setScrtimes = (scrtimes) => {
+  setScrTimes = (scrtimes) => {
     this.setState({
       scrtimes,
     });
@@ -78,10 +78,11 @@ class App extends React.Component {
     });
   };
 
-  addScrtime = (scrtime) => {
+  addScrTime = (scrtime) => {
     this.setState({
-      scrtime: [...this.state.scrtimes, scrtime],
+      scrtimes: [...this.state.scrtimes, scrtime],
     });
+    console.log(`new scrtime -- ${JSON.stringify(scrtime)}`)
   };
 
   addLoggedIn = (logged_in) => {
@@ -107,6 +108,7 @@ class App extends React.Component {
         this.addFriend(friend);
       },
       addScrTime: (scrtime) => {
+        this.addScrTime(scrtime);
         this.setState({
           scrtime,
         });
@@ -198,7 +200,7 @@ class App extends React.Component {
           <Route
             path="/compare/:friendUserId"
             render={(routeProps) => {
-              return <Compare logged_in={context.logged_in} {...routeProps} />;
+              return <Compare logged_in={context.logged_in} scrtimes={context.scrtimes}{...routeProps} />;
             }}
           />
         </div>

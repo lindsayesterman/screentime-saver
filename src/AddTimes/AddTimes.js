@@ -40,9 +40,9 @@ export default class AddTimes extends React.Component {
       })
       .then((data) => {
         console.log(data);
+        this.context.addScrTime(data);
         this.setState({ scrtimes: data })
-        this.context.addScrTime(scrtime);
-        console.log(data.user_id)
+        console.log(data)
         this.props.history.push(`/profile/${data.user_id}`);
       })
       .catch((error) => {
