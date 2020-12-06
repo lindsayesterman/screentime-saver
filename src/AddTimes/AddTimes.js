@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
 import UsersContext from "../usersContext";
+import config from '../config.js'
 
 export default class AddTimes extends React.Component {
   state = {
@@ -23,7 +24,7 @@ export default class AddTimes extends React.Component {
       date_created: new Date(),
     };
     this.setState({ error: null });
-    fetch(`http://localhost:8000/api/scrtimes`, {
+    fetch(`${config.API_ENDPOINT}/scrtimes`, {
       method: "POST",
       body: JSON.stringify(scrtime),
       headers: {

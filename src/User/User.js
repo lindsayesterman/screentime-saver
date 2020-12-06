@@ -1,5 +1,6 @@
 import React from "react";
 import UsersContext from "../usersContext";
+import config from '../config.js'
 
 export default class User extends React.Component {
   static contextType = UsersContext;
@@ -12,7 +13,7 @@ export default class User extends React.Component {
       date_created: new Date(),
     };
     this.setState({ error: null });
-    fetch(`http://localhost:8000/api/friends`, {
+    fetch(`${config.API_ENDPOINT}/friends`, {
       method: "POST",
       body: JSON.stringify(friend),
       headers: {

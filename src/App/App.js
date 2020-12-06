@@ -12,6 +12,7 @@ import FriendsList from "../FriendsList/FriendsList";
 import AddTimes from "../AddTimes/AddTimes";
 import Compare from "../Compare/Compare";
 import iphone from '../iphone.png'
+import config from '../config.js'
 
 
 class App extends React.Component {
@@ -31,8 +32,8 @@ class App extends React.Component {
 
   componentDidMount() {
     Promise.all([
-      fetch(`http://localhost:8000/api/users`),
-      fetch(`http://localhost:8000/api/scrtimes`),
+      fetch(`${config.API_ENDPOINT}/users`),
+      fetch(`${config.API_ENDPOINT}/scrtimes`),
     ])
       .then(([usersRes, scrtimesRes]) => {
         if (!usersRes.ok) return usersRes.json().then((e) => Promise.reject(e));

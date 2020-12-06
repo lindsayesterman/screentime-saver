@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar.js";
 import UsersContext from "../usersContext.js";
+import config from '../config.js'
 
 class Register extends React.Component {
   state = {
@@ -18,7 +19,7 @@ class Register extends React.Component {
       date_created: new Date(),
     };
     this.setState({ error: null });
-    fetch(`http://localhost:8000/api/users`, {
+    fetch(`${config.API_ENDPOINT}/users`, {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
