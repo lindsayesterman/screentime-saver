@@ -12,21 +12,21 @@ The average adult spends over 3 hours on their phone each day. That is a lot of 
 
 Register and Login: 
 
-![register and login page](./readme-imgs/reg.png)
+![register and login page](./src/readme-imgs/reg.png)
 
 
 View Users to Connect with:
 
-![users page](./readme-imgs/users.png)
+![users page](./src/readme-imgs/users.png)
 
 Add Screentimes: 
 
-![add times page](./readme-imgs/scrtimes.png)
+![add times page](./src/readme-imgs/scrtimes.png)
 
 
 Compete with Friends: 
 
-![compare page](./readme-imgs/compare.png)
+![compare page](./src/readme-imgs/compare.png)
 
 
 
