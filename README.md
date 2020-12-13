@@ -12,7 +12,7 @@ The average adult spends over 3 hours on their phone each day. That is a lot of 
 
 Register and Login: 
 
-![register and login page](https://github.com/lindsayesterman/nasa-apod/blob/master/readme-imgs/reg.png?raw=true)
+![register and login page](https://github.com/lindsayesterman/nasa-apod/blob/master/src/readme-imgs/reg.png?raw=true)
 
 View Users to Connect with:
 
