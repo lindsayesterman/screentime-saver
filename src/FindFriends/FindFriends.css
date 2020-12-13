@@ -15,7 +15,7 @@ ul.findfriends li {
     margin:20px auto;
     list-style: none;
     border: 1px solid gray;
-    height:120px;
+    height:100%;
     padding:50px;
     width:50%;
 }
