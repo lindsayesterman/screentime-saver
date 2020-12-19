@@ -32,8 +32,9 @@ export default class Profile extends React.Component {
         <div className="profile-info">
           <h3>Name: {user.user_name || this.props.logged_in.user_name } </h3>
           <h3>About: {user.user_bio || this.props.logged_in.user_bio }  </h3>
-          <h3>Weekly screentime: {totalScrTime}</h3>
+          <h3>Weekly screentime: {totalScrTime || "You haven't entered screentimes for this week yet! "}</h3>
         </div>
+        <button type="submit">Log out</button>
       </>
     );
   }
