@@ -12,19 +12,22 @@ The average adult spends over 3 hours on their phone each day. That is a lot of 
 
 Register and Login: 
 
-![register and login page](https://github.com/lindsayesterman/nasa-apod/blob/master/reg.png?raw=true)
+![register and login page](./src/readme-imgs/reg.png)
+
 
 View Users to Connect with:
 
-![users page](https://github.com/lindsayesterman/nasa-apod/blob/master/users.png?raw=true)
+![users page](./src/readme-imgs/users.png)
 
 Add Screentimes: 
 
-![add times page](https://github.com/lindsayesterman/nasa-apod/blob/master/scrtimes.png?raw=true)
+![add times page](./src/readme-imgs/scrtimes.png)
+
 
 Compete with Friends: 
 
-![compare page](https://github.com/lindsayesterman/nasa-apod/blob/master/compare.png?raw=true)
+![compare page](./src/readme-imgs/compare.png)
+
 
 
 ## Stack 
