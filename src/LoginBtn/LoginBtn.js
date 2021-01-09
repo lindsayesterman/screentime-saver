@@ -4,7 +4,7 @@ import NavBar from "../NavBar/NavBar.js";
 import "./LoginBtn.css";
 import TokenService from "../services/token-service";
 import AuthApiService from "../services/auth-api-service";
-import UsersContext from '../usersContext'
+import UsersContext from "../usersContext";
 
 class Login extends React.Component {
   static contextType = UsersContext;
@@ -35,7 +35,7 @@ class Login extends React.Component {
       })
       .catch((res) => {
         this.setState({ error: res.error });
-        console.error(res)
+        console.error(res);
       });
   };
 

@@ -13,7 +13,7 @@ export default class NavBar extends React.Component {
         <Link to="/">
           <h1 className="title">Screentime Saver</h1>
         </Link>
-        <Link to={`/profile/${logged_in.id}`}>
+        <Link to={`/profile/${logged_in.userId}`}>
           <h4 className="profile">Account</h4>
         </Link>
         <Link to="/users">
