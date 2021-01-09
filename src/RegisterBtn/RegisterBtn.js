@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar.js";
 import UsersContext from "../usersContext.js";
-import config from '../config.js'
+import config from "../config.js";
 
 class Register extends React.Component {
   state = {
@@ -24,6 +24,7 @@ class Register extends React.Component {
       body: JSON.stringify(user),
       headers: {
         "content-type": "application/json",
+        "Authorization": "bearer "+localStorage.getItem("authToken"),
       },
     })
       .then((res) => {
@@ -38,7 +39,7 @@ class Register extends React.Component {
         console.log(data);
         this.context.addUser(data);
         this.context.addLoggedIn(data);
-        this.setState({ logged_in: data })
+        this.setState({ logged_in: data });
         this.props.history.push(`/profile/${data.id}`);
       })
       .catch((error) => {
@@ -49,7 +50,7 @@ class Register extends React.Component {
   render() {
     return (
       <form className="registration" onSubmit={(e) => this.handleUserSubmit(e)}>
-        <NavBar  logged_in={this.context.logged_in} />
+        <NavBar logged_in={this.context.logged_in} />
         <div className="container-login">
           <input
             type="text"

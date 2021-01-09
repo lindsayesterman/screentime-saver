@@ -1,6 +1,7 @@
 import React from "react";
 import UsersContext from "../usersContext";
 import config from '../config.js'
+import TokenService from "../services/token-service";
 
 export default class User extends React.Component {
   static contextType = UsersContext;
@@ -18,6 +19,7 @@ export default class User extends React.Component {
       body: JSON.stringify(friend),
       headers: {
         "content-type": "application/json",
+        "Authorization": TokenService.getAuthToken()
       },
     })
       .then((res) => {

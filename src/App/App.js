@@ -7,13 +7,10 @@ import FindFriends from "../FindFriends/FindFriends";
 import "./App.css";
 import UsersContext from "../usersContext";
 import FriendsList from "../FriendsList/FriendsList";
-//import PrivateRoute from "../Utils/PrivateRoute";
-//import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
 import AddTimes from "../AddTimes/AddTimes";
 import Compare from "../Compare/Compare";
-import iphone from '../iphone.png'
-import config from '../config.js'
-
+import iphone from "../iphone.png";
+import config from "../config.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -83,7 +80,7 @@ class App extends React.Component {
     this.setState({
       scrtimes: [...this.state.scrtimes, scrtime],
     });
-    console.log(`new scrtime -- ${JSON.stringify(scrtime)}`)
+    console.log(`new scrtime -- ${JSON.stringify(scrtime)}`);
   };
 
   addLoggedIn = (logged_in) => {
@@ -148,10 +145,7 @@ class App extends React.Component {
               </li>
             </ul>
             <div className="container-front">
-              <img
-                src={iphone}
-                alt="iphone"
-              ></img>
+              <img src={iphone} alt="iphone"></img>
               <h2 className="front-quote">
                 Are you a digital minimalist? Compete with your friends to find
                 out!
@@ -183,7 +177,13 @@ class App extends React.Component {
           <Route
             path="/friends"
             render={(routeProps) => {
-              return <FriendsList friends={context.friends} scrtimes={context.scrtimes} {...routeProps} />;
+              return (
+                <FriendsList
+                  friends={context.friends}
+                  scrtimes={context.scrtimes}
+                  {...routeProps}
+                />
+              );
             }}
           />
           <Route
@@ -201,7 +201,13 @@ class App extends React.Component {
           <Route
             path="/compare/:friendUserId"
             render={(routeProps) => {
-              return <Compare logged_in={context.logged_in} scrtimes={context.scrtimes}{...routeProps} />;
+              return (
+                <Compare
+                  logged_in={context.logged_in}
+                  scrtimes={context.scrtimes}
+                  {...routeProps}
+                />
+              );
             }}
           />
         </div>
