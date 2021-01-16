@@ -55,15 +55,15 @@ export default class AddTimes extends React.Component {
     return (
       <>
         <NavBar  logged_in={this.context.logged_in} />
-        <h4>Round to the nearest hour:</h4>
+        <h4>Enter a number of hours (if 0, put 0):</h4>
         <form onSubmit={(e) => this.handleScrSubmit(e)}>
-          <input type="number" placeholder="Sunday Screentime" name="sun" id="sun"></input>
-          <input type="number" placeholder="Monday Screentime" name="mon" id="mon"></input>
-          <input type="number" placeholder="Tuesday Screentime" name="tues" id="tues"></input>
-          <input type="number" placeholder="Wednesday Screentime" name="wed" id="wed"></input>
-          <input type="number" placeholder="Thursday Screentime" name="thurs" id="thurs"></input>
-          <input type="number" placeholder="Friday Screentime" name="fri" id="fri"></input>
-          <input type="number" placeholder="Saturday Screentime" name="sat" id="sat"></input>
+          <input type="number" placeholder="Sunday Screentime" name="sun" id="sun" required></input>
+          <input type="number" placeholder="Monday Screentime" name="mon" id="mon" required></input>
+          <input type="number" placeholder="Tuesday Screentime" name="tues" id="tues" required></input>
+          <input type="number" placeholder="Wednesday Screentime" name="wed" id="wed" required></input>
+          <input type="number" placeholder="Thursday Screentime" name="thurs" id="thurs" required></input>
+          <input type="number" placeholder="Friday Screentime" name="fri" id="fri" required></input>
+          <input type="number" placeholder="Saturday Screentime" name="sat" id="sat" required></input>
           <button type="submit">Submit this weeks screentimes!</button>
         </form>
       </>

@@ -24,18 +24,18 @@ class Login extends React.Component {
       user_name: user_name.value,
       user_password: user_password.value,
     })
-      .then((res) => {
-        console.log(res);
-        TokenService.saveAuthToken(res.authToken);
+      .then((data) => {
+        console.log(data);
+        TokenService.saveAuthToken(data.authToken);
         this.props.onLoginSuccess();
-        this.context.addLoggedIn(res);
-        this.setState({ logged_in: res });
-        console.log("username" + res.user_name);
-        this.props.history.push(`/profile/${res.userId}`);
+        this.context.addLoggedIn(data);
+        this.setState({ logged_in: data });
+        console.log("id " + data.userId);
+        this.props.history.push(`/profile/${data.userId}`);
       })
-      .catch((res) => {
-        this.setState({ error: res.error });
-        console.error(res);
+      .catch((data) => {
+        this.setState({ error: data.error });
+        console.error(data);
       });
   };
 
