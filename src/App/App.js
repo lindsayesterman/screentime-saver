@@ -11,6 +11,7 @@ import AddTimes from "../AddTimes/AddTimes";
 import Compare from "../Compare/Compare";
 import iphone from "../iphone.png";
 import config from "../config.js";
+import TokenService from "../services/token-service";
 
 class App extends React.Component {
   constructor(props) {
@@ -28,9 +29,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    if (!TokenService.getAuthToken()){
+      return;
+    }
     Promise.all([
-      fetch(`${config.API_ENDPOINT}/users`),
-      fetch(`${config.API_ENDPOINT}/scrtimes`),
+      fetch(`${config.API_ENDPOINT}/users`, {
+        headers: {
+          "Authorization": "bearer " + TokenService.getAuthToken()
+        },
+      }),
+      fetch(`${config.API_ENDPOINT}/scrtimes`, {
+        headers: {
+          "Authorization":  "bearer " + TokenService.getAuthToken()
+        },
+      }),    
     ])
       .then(([usersRes, scrtimesRes]) => {
         if (!usersRes.ok) return usersRes.json().then((e) => Promise.reject(e));

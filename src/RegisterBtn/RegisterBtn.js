@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../NavBar/NavBar.js";
 import UsersContext from "../usersContext.js";
 import config from "../config.js";
+import { Link } from "react-router-dom";
 
 class Register extends React.Component {
   state = {
@@ -24,7 +25,7 @@ class Register extends React.Component {
       body: JSON.stringify(user),
       headers: {
         "content-type": "application/json",
-        "Authorization": "bearer "+localStorage.getItem("authToken"),
+        // "Authorization": "bearer "+localStorage.getItem("authToken"),
       },
     })
       .then((res) => {
@@ -50,7 +51,24 @@ class Register extends React.Component {
   render() {
     return (
       <form className="registration" onSubmit={(e) => this.handleUserSubmit(e)}>
-        <NavBar logged_in={this.context.logged_in} />
+        {/* <NavBar logged_in={this.context.logged_in} /> */}
+        <ul className="navbar">
+              <li>
+                <Link to="/">
+                  <h3>Screentime Saver</h3>
+                </Link>
+              </li>
+              <li>
+                <Link to="/register">
+                  <h3 className="front-sign-up">Register</h3>
+                </Link>
+              </li>
+              <li>
+                <Link to="/login">
+                  <h3 className="front-sign-up">Login</h3>
+                </Link>
+              </li>
+            </ul>
         <div className="container-login">
           <input
             type="text"

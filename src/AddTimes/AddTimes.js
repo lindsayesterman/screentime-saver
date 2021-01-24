@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../NavBar/NavBar";
 import UsersContext from "../usersContext";
 import config from '../config.js'
+import TokenService from "../services/token-service";
 
 export default class AddTimes extends React.Component {
   state = {
@@ -29,6 +30,7 @@ export default class AddTimes extends React.Component {
       body: JSON.stringify(scrtime),
       headers: {
         "content-type": "application/json",
+        "Authorization": "bearer " + TokenService.getAuthToken()
       },
     })
       .then((res) => {
@@ -55,7 +57,7 @@ export default class AddTimes extends React.Component {
     return (
       <>
         <NavBar  logged_in={this.context.logged_in} />
-        <h4>Enter a number of hours (if 0, put 0):</h4>
+        <h4>Enter a number of hours:</h4>
         <form onSubmit={(e) => this.handleScrSubmit(e)}>
           <input type="number" placeholder="Sunday Screentime" name="sun" id="sun" required></input>
           <input type="number" placeholder="Monday Screentime" name="mon" id="mon" required></input>

@@ -5,6 +5,7 @@ import "./LoginBtn.css";
 import TokenService from "../services/token-service";
 import AuthApiService from "../services/auth-api-service";
 import UsersContext from "../usersContext";
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
   static contextType = UsersContext;
@@ -50,7 +51,24 @@ class Login extends React.Component {
   render() {
     return (
       <>
-        <NavBar logged_in={this.context.logged_in} />
+        {/* <NavBar logged_in={this.context.logged_in} /> */}
+        <ul className="navbar">
+              <li>
+                <Link to="/">
+                  <h3>Screentime Saver</h3>
+                </Link>
+              </li>
+              <li>
+                <Link to="/register">
+                  <h3 className="front-sign-up">Register</h3>
+                </Link>
+              </li>
+              <li>
+                <Link to="/login">
+                  <h3 className="front-sign-up">Login</h3>
+                </Link>
+              </li>
+            </ul>
         <form
           className="registration"
           onSubmit={(e) => this.handleSubmitJwtAuth(e)}

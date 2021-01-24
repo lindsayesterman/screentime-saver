@@ -19,7 +19,7 @@ export default class User extends React.Component {
       body: JSON.stringify(friend),
       headers: {
         "content-type": "application/json",
-        "Authorization": TokenService.getAuthToken()
+        "Authorization": "bearer " + TokenService.getAuthToken()
       },
     })
       .then((res) => {
