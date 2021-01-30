@@ -1,6 +1,5 @@
 import React from "react";
 import "./LoginBtn.css";
-import NavBar from "../NavBar/NavBar.js";
 import "./LoginBtn.css";
 import TokenService from "../services/token-service";
 import AuthApiService from "../services/auth-api-service";
@@ -32,8 +31,8 @@ class Login extends React.Component {
         this.context.addLoggedIn(data);
         this.setState({ logged_in: data });
         fetchAppData().then((data) => {
-          this.context.setAppData(data)
-          this.props.history.push(`/profile/${data.userId}`);
+          this.context.setAppData(data);
+          this.props.history.push("/users");
         });
       })
       .catch((data) => {

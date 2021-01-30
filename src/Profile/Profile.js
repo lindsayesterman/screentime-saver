@@ -4,7 +4,6 @@ import NavBar from "../NavBar/NavBar.js";
 import UsersContext from "../usersContext";
 import { findUser, findScrtime } from "../helper.js";
 import TokenService from "../services/token-service";
-import AuthApiService from "../services/auth-api-service";
 import { Link } from "react-router-dom";
 
 export default class Profile extends React.Component {
@@ -48,8 +47,8 @@ export default class Profile extends React.Component {
       <>
         <NavBar logged_in={this.context.logged_in} />
         <div className="profile-info">
-          <h3>Name: {user.user_name || this.props.logged_in.user_name || logged_in.user_name} </h3>
-          <h3>About: {user.user_bio || this.props.logged_in.user_bio || logged_in.user_bio} </h3> 
+          <h3>Name: {user.user_name || this.props.logged_in.user_name } </h3>
+          <h3>About: {user.user_bio || this.props.logged_in.user_bio } </h3> 
           <h3>
             Weekly screentime:{" "}
             {totalScrTime ||
