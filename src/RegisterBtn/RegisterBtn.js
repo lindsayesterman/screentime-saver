@@ -3,6 +3,7 @@ import NavBar from "../NavBar/NavBar.js";
 import UsersContext from "../usersContext.js";
 import config from "../config.js";
 import { Link } from "react-router-dom";
+import TokenService from "../services/token-service";
 
 class Register extends React.Component {
   state = {
@@ -38,9 +39,12 @@ class Register extends React.Component {
       })
       .then((data) => {
         console.log(data);
-        this.context.addUser(data);
+        this.context.addUser(data);        
+        TokenService.saveAuthToken(data.authToken);
+        this.props.onLoginSuccess();
         this.context.addLoggedIn(data);
         this.setState({ logged_in: data });
+        console.log("id " + data.userId);
         this.props.history.push(`/profile/${data.id}`);
       })
       .catch((error) => {

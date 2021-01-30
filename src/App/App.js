@@ -10,8 +10,7 @@ import FriendsList from "../FriendsList/FriendsList";
 import AddTimes from "../AddTimes/AddTimes";
 import Compare from "../Compare/Compare";
 import iphone from "../iphone.png";
-import config from "../config.js";
-import TokenService from "../services/token-service";
+import { fetchAppData } from "../AppData.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -29,39 +28,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    if (!TokenService.getAuthToken()){
-      return;
-    }
-    Promise.all([
-      fetch(`${config.API_ENDPOINT}/users`, {
-        headers: {
-          "Authorization": "bearer " + TokenService.getAuthToken()
-        },
-      }),
-      fetch(`${config.API_ENDPOINT}/scrtimes`, {
-        headers: {
-          "Authorization":  "bearer " + TokenService.getAuthToken()
-        },
-      }),    
-    ])
-      .then(([usersRes, scrtimesRes]) => {
-        if (!usersRes.ok) return usersRes.json().then((e) => Promise.reject(e));
-        if (!scrtimesRes.ok)
-          return scrtimesRes.json().then((e) => Promise.reject(e));
-
-        return Promise.all([usersRes.json(), scrtimesRes.json()]);
-      })
-      .then(([users, scrtimes]) => {
-        this.setState({
-          users,
-          scrtimes,
-        });
-      })
+    fetchAppData()
+      .then(this.setAppData)
       .catch((error) => {
         this.setState({ error });
         console.error({ error });
       });
   }
+
+  setAppData = ([users, scrtimes]) => {
+    this.setState({
+      users,
+      scrtimes,
+    });
+  };
 
   setUsers = (users) => {
     this.setState({
@@ -109,6 +89,7 @@ class App extends React.Component {
       scrtime: this.state.scrtime,
       friends: this.state.friends,
       logged_in: this.state.logged_in,
+      setAppData: this.setAppData,
       addUser: (user) => {
         this.setState({
           user,

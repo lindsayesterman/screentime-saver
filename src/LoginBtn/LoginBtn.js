@@ -5,7 +5,8 @@ import "./LoginBtn.css";
 import TokenService from "../services/token-service";
 import AuthApiService from "../services/auth-api-service";
 import UsersContext from "../usersContext";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { fetchAppData } from "../AppData.js";
 
 class Login extends React.Component {
   static contextType = UsersContext;
@@ -26,13 +27,14 @@ class Login extends React.Component {
       user_password: user_password.value,
     })
       .then((data) => {
-        console.log(data);
         TokenService.saveAuthToken(data.authToken);
         this.props.onLoginSuccess();
         this.context.addLoggedIn(data);
         this.setState({ logged_in: data });
-        console.log("id " + data.userId);
-        this.props.history.push(`/profile/${data.userId}`);
+        fetchAppData().then((data) => {
+          this.context.setAppData(data)
+          this.props.history.push(`/profile/${data.userId}`);
+        });
       })
       .catch((data) => {
         this.setState({ error: data.error });
@@ -53,22 +55,22 @@ class Login extends React.Component {
       <>
         {/* <NavBar logged_in={this.context.logged_in} /> */}
         <ul className="navbar">
-              <li>
-                <Link to="/">
-                  <h3>Screentime Saver</h3>
-                </Link>
-              </li>
-              <li>
-                <Link to="/register">
-                  <h3 className="front-sign-up">Register</h3>
-                </Link>
-              </li>
-              <li>
-                <Link to="/login">
-                  <h3 className="front-sign-up">Login</h3>
-                </Link>
-              </li>
-            </ul>
+          <li>
+            <Link to="/">
+              <h3>Screentime Saver</h3>
+            </Link>
+          </li>
+          <li>
+            <Link to="/register">
+              <h3 className="front-sign-up">Register</h3>
+            </Link>
+          </li>
+          <li>
+            <Link to="/login">
+              <h3 className="front-sign-up">Login</h3>
+            </Link>
+          </li>
+        </ul>
         <form
           className="registration"
           onSubmit={(e) => this.handleSubmitJwtAuth(e)}
