@@ -36,10 +36,11 @@ class App extends React.Component {
       });
   }
 
-  setAppData = ([users, scrtimes]) => {
+  setAppData = ([users, scrtimes, friends]) => {
     this.setState({
       users,
       scrtimes,
+      friends,
     });
   };
 
@@ -52,6 +53,12 @@ class App extends React.Component {
   setScrTimes = (scrtimes) => {
     this.setState({
       scrtimes,
+    });
+  };
+
+  setFriends = (friends) => {
+    this.setState({
+      friends,
     });
   };
 

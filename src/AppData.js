@@ -16,11 +16,20 @@ export const fetchAppData = () => {
         Authorization: "bearer " + TokenService.getAuthToken(),
       },
     }),
-  ]).then(([usersRes, scrtimesRes]) => {
+    fetch(`${config.API_ENDPOINT}/friends`, {
+      headers: {
+        Authorization: "bearer " + TokenService.getAuthToken(),
+      },
+    }),
+  ]).then(([usersRes, scrtimesRes, friendsRes]) => {
     if (!usersRes.ok) return usersRes.json().then((e) => Promise.reject(e));
     if (!scrtimesRes.ok)
       return scrtimesRes.json().then((e) => Promise.reject(e));
-
-    return Promise.all([usersRes.json(), scrtimesRes.json()]);
+    if (!friendsRes.ok) return friendsRes.json().then((e) => Promise.reject(e));
+    return Promise.all([
+      usersRes.json(),
+      scrtimesRes.json(),
+      friendsRes.json(),
+    ]);
   });
 };
