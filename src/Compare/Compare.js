@@ -14,8 +14,6 @@ export default class Compare extends React.Component {
   static contextType = UsersContext;
 
   render() {
-    const me = "";
-    const you = "";
     const { friends = [], scrtimes = [], logged_in = [] } = this.context;
     const { friendUserId } = this.props.match.params;
     const friend = findFriend(friends, (friendUserId + "")) || {
@@ -24,12 +22,9 @@ export default class Compare extends React.Component {
     const scrtime = findScrtime(scrtimes, parseFloat(friendUserId)) || {
       day_1: "",
     };
-    const myScrtime = findMyScrtime(scrtimes, logged_in.id) || {
+    const myScrtime = findMyScrtime(scrtimes, logged_in.userId) || {
       day_1: "",
     };
-    console.log(myScrtime)
-    console.log(scrtimes)
-    console.log(logged_in)
     const totalScrTime =
       parseFloat(scrtime.day_1) +
       parseFloat(scrtime.day_2) +

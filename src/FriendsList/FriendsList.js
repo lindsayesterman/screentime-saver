@@ -16,7 +16,7 @@ export default class FriendsList extends React.Component {
             <Link to={`/compare/${friend.friend_user_id}`} key={friend.id}>
               <User
                 name={friend.friend_name}
-                text="Remove Friend"
+                text={friend.date_created}
                 key={friend.id}
                 {...friend}
               />
