@@ -21,7 +21,7 @@ export default class AddTimes extends React.Component {
       day_5: e.target["thurs"].value,
       day_6: e.target["fri"].value,
       day_7: e.target["sat"].value,
-      user_id: this.props.logged_in.id,
+      // user_id: this.props.logged_in.userId,
       date_created: new Date(),
     };
     this.setState({ error: null });
@@ -42,10 +42,9 @@ export default class AddTimes extends React.Component {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
+        console.log(data)
         this.context.addScrTime(data);
         this.setState({ scrtimes: data })
-        console.log(data)
         this.props.history.push(`/profile/${data.user_id}`);
       })
       .catch((error) => {

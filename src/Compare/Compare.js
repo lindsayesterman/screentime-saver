@@ -16,9 +16,12 @@ export default class Compare extends React.Component {
   render() {
     const { friends = [], scrtimes = [], logged_in = [] } = this.context;
     const { friendUserId } = this.props.match.params;
-    const friend = findFriend(friends, (friendUserId + "")) || {
-      friend_name: "",
-    };
+    // const friend = findFriend(friends, friendUserId + "") || {
+    //   friend_name: "",
+    // };
+    console.log(friends);
+    const friend = friends.find(x =>  x.id === parseFloat(friendUserId)) 
+
     const scrtime = findScrtime(scrtimes, parseFloat(friendUserId)) || {
       day_1: "",
     };
@@ -33,21 +36,25 @@ export default class Compare extends React.Component {
       parseFloat(scrtime.day_5) +
       parseFloat(scrtime.day_6) +
       parseFloat(scrtime.day_7);
-    const myTotalScrTime = 
-    parseFloat(myScrtime.day_1) + 
-    parseFloat(myScrtime.day_2) + 
-    parseFloat(myScrtime.day_3) + 
-    parseFloat(myScrtime.day_4) + 
-    parseFloat(myScrtime.day_5) + 
-    parseFloat(myScrtime.day_6) + 
-    parseFloat(myScrtime.day_7);
-      const friendNoValues = friend.friend_name+" hasn't filled in this week's values yet!";
-      const userNoValues = "fill in this weeks values!";
+    const myTotalScrTime =
+      parseFloat(myScrtime.day_1) +
+      parseFloat(myScrtime.day_2) +
+      parseFloat(myScrtime.day_3) +
+      parseFloat(myScrtime.day_4) +
+      parseFloat(myScrtime.day_5) +
+      parseFloat(myScrtime.day_6) +
+      parseFloat(myScrtime.day_7);
+    const friendNoValues =
+      friend.friend_name + " hasn't filled in this week's values yet!";
+    const userNoValues = "fill in this weeks values!";
     return (
       <>
-        <NavBar  logged_in={this.context.logged_in} />
+        <NavBar logged_in={this.context.logged_in} />
         <div className="compare">
-          <h3>Total week's screentime Difference: {Math.abs(myTotalScrTime - totalScrTime)} </h3>
+          <h3>
+            Total week's screentime Difference:{" "}
+            {Math.abs(myTotalScrTime - totalScrTime)}{" "}
+          </h3>
           <table>
             <tbody>
               <tr>
@@ -64,7 +71,7 @@ export default class Compare extends React.Component {
               </tr>
               <tr>
                 <td>{scrtime.day_3 || friendNoValues} hours</td>
-                <td>{myScrtime.day_3  || userNoValues} hours</td>
+                <td>{myScrtime.day_3 || userNoValues} hours</td>
               </tr>
               <tr>
                 <td>{scrtime.day_4 || friendNoValues} hours</td>
@@ -84,7 +91,7 @@ export default class Compare extends React.Component {
               </tr>
               <tr>
                 <td>{totalScrTime || ""} </td>
-                <td>{myTotalScrTime  || ""}</td>
+                <td>{myTotalScrTime || ""}</td>
               </tr>
             </tbody>
           </table>

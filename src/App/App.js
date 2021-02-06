@@ -69,7 +69,6 @@ class App extends React.Component {
   };
 
   addFriend = (friend) => {
-    console.log(`new friend -- ${JSON.stringify(friend)}`);
     this.setState({
       friends: [...this.state.friends, friend],
     });
@@ -79,7 +78,6 @@ class App extends React.Component {
     this.setState({
       scrtimes: [...this.state.scrtimes, scrtime],
     });
-    console.log(`new scrtime -- ${JSON.stringify(scrtime)}`);
   };
 
   addLoggedIn = (logged_in) => {
@@ -204,6 +202,7 @@ class App extends React.Component {
               return (
                 <Compare
                   logged_in={context.logged_in}
+                  friends={context.friends}
                   scrtimes={context.scrtimes}
                   {...routeProps}
                 />
