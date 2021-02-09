@@ -19,7 +19,7 @@ h2.front-quote{
     left:49%;
     top:45%;
     transform: translate(-50%, -50%);
-    width:27%;
+    width:20%;
     z-index:2;
     background-color: transparent;
     color:white;
@@ -51,6 +51,13 @@ img {
 @keyframes iphone {
     50% {width:660px; height:480px;};
     100% {width:630px; height:440px;};
+}
+
+
+@media only screen and (max-width: 800px){
+    h2.front-quote{
+        width:47%;
+    }
 }
 
 @media only screen and (max-width: 400px){
