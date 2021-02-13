@@ -19,7 +19,6 @@ export default class Compare extends React.Component {
     // const friend = findFriend(friends, friendUserId + "") || {
     //   friend_name: "",
     // };
-    console.log(friends);
     const friend = friends.find(x =>  x.id === parseFloat(friendUserId)) 
 
     const scrtime = findScrtime(scrtimes, parseFloat(friendUserId)) || {

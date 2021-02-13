@@ -28,7 +28,7 @@ export default class NavBar extends React.Component {
         <Link to="/users">
           <h4 className="connect">Connect</h4>
         </Link>
-        <Link to="/friends">
+        <Link to={`/friends`}>
           <h4 className="friends">Friends</h4>
         </Link>
         <Link to="/addtimes">
