@@ -9,4 +9,3 @@ scrtimes.find((scrtime) => scrtime.user_id === scrtimeUserId);
 
 export const findMyScrtime = (scrtimes = [], myscrtimeUserId) =>
 scrtimes.find((scrtime) => scrtime.user_id === myscrtimeUserId)
-

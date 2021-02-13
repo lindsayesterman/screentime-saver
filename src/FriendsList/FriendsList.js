@@ -10,7 +10,6 @@ export default class FriendsList extends React.Component {
   render() {
     const { friends } = this.context;
     const currUserId = this.props.logged_in.userId;
-    console.log(currUserId)
     const myFriends  = this.context.friends.filter((friends) => friends.user_id === currUserId);
     //friends = friends.filter((friends) => friends.user_id == currUserId);
 
