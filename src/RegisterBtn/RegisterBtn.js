@@ -47,7 +47,6 @@ class Register extends React.Component {
       //   return res.json();
       // })
       .then((data) => {
-        console.log(data);
         this.context.addUser(data);
         TokenService.saveAuthToken(data.authToken);
         this.props.onRegistrationSuccess();

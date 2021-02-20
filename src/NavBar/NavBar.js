@@ -14,7 +14,7 @@ export default class NavBar extends React.Component {
     const { logged_in = {} } = this.context;
     return (
       <div className="nav-bar">
-        <Link to="/">
+        <Link to="/users">
           <h1 className="title">Screentime Saver</h1>
         </Link>
         <Link

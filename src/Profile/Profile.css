@@ -1,17 +1,44 @@
-h1.profile, h3.connect{
-    margin:30px;
+h1.profile,
+h3.connect {
+  margin: 30px;
 }
 
-h3.connect{
-    float:right;
-    text-decoration: underline;
+h3.connect {
+  float: right;
+  text-decoration: underline;
 }
 
-h1.profile{
-    float:left;
+h1.profile {
+  float: left;
 }
 
-div.profile-info > h3{
-    margin:28px auto;
-    width: 60%;
+div.profile-info {
+  width:50%;
+  margin:0 auto;
+}
+
+div.profile-info > h3 {
+  margin: 28px auto;
+  padding: 20px;
+  background-color:rgb(255, 255, 255);
+  border:1px solid #ccc;
+}
+
+h3.profileName {
+  color: rgb(82, 214, 82);
+}
+
+h3.profileBio {
+  color: #529aec;
+}
+
+h3.profileScrtime {
+  color: #bb86fc;
+}
+
+
+@media (max-width:449px){
+    div.profile-info {
+        width:90%;
+    }
 }

@@ -23,8 +23,7 @@ export const fetchAppData = () => {
     }),
   ]).then(([usersRes, scrtimesRes, friendsRes]) => {
     if (!usersRes.ok) return usersRes.json().then((e) => Promise.reject(e));
-    if (!scrtimesRes.ok)
-      return scrtimesRes.json().then((e) => Promise.reject(e));
+    if (!scrtimesRes.ok) return scrtimesRes.json().then((e) => Promise.reject(e));
     if (!friendsRes.ok) return friendsRes.json().then((e) => Promise.reject(e));
     return Promise.all([
       usersRes.json(),

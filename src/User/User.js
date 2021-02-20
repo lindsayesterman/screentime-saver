@@ -1,6 +1,6 @@
 import React from "react";
 import UsersContext from "../usersContext";
-import config from '../config.js'
+import config from "../config.js";
 import TokenService from "../services/token-service";
 
 export default class User extends React.Component {
@@ -19,7 +19,7 @@ export default class User extends React.Component {
       body: JSON.stringify(friend),
       headers: {
         "content-type": "application/json",
-        "Authorization": "bearer " + TokenService.getAuthToken()
+        Authorization: "bearer " + TokenService.getAuthToken(),
       },
     })
       .then((res) => {
@@ -31,7 +31,6 @@ export default class User extends React.Component {
         return res.json();
       })
       .then((data) => {
-        console.log(data)
         this.context.addFriend(data);
         this.props.history.push("/friends");
       })
@@ -41,13 +40,20 @@ export default class User extends React.Component {
   };
 
   render() {
+    const x = window.matchMedia("(max-width:449px)");
     return (
       <li className="user">
-          <h3>{this.props.name}</h3>
-          <h3>{this.props.bio}</h3>
-          <button onClick={(e) => this.handleFriendRequest(e)}>
-            {this.props.text}
-          </button>
+        <h3 className="usersName">
+          {!x.matches
+            ? this.props.name
+            : this.props.name.length > 17
+            ? this.props.name.slice(0, 17) + "..."
+            : this.props.name}
+        </h3>
+        <h3 className="usersBio">{this.props.bio}</h3>
+        <button onClick={(e) => this.handleFriendRequest(e)}>
+          {this.props.text}
+        </button>
       </li>
     );
   }

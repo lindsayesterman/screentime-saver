@@ -1,85 +1,95 @@
-*{
-    background-color:whitesmoke;
-    font-family: 'Courier New', Courier, monospace;
-    color:black;
+body {
+  background-color: whitesmoke;
+  font-family: "Courier New", Courier, monospace;
+}
+
+* {
+  color: black;
 }
 
 ul.navbar {
-    list-style:none;
-    text-align:right;
+  list-style: none;
+  text-align: right;
 }
 
 ul li {
-    margin:0px 15px;
-    display:inline-block;
+  margin: 0px 15px;
+  display: inline-block;
 }
 
-h2.front-quote{
-    position: absolute;
-    left:49%;
-    top:45%;
-    transform: translate(-50%, -50%);
-    width:20%;
-    z-index:2;
-    background-color: transparent;
-    color:white;
-    font-size:19px;
+h2.front-quote {
+  position: absolute;
+  left: 49%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+  z-index: 2;
+  background-color: transparent;
+  color: white;
+  font-size: 19px;
 }
 
-.container-front{
-    position: relative;
-    text-align: center;
+.container-front {
+  position: relative;
+  text-align: center;
 }
 
 img {
-    position:relative;
-    display:block;
-    margin:0 auto;
-    width:50%;
-    width:630px;
-    height:440px;
-    animation-name:iphone;
-    animation-duration: 3.5s;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  width: 630px;
+  height: 440px;
+  animation-name: iphone;
+  animation-duration: 3.5s;
 }
 
 .about {
-    width:70%;
-    margin: 0 auto;
-    margin-bottom:65px;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 65px;
 }
 
 @keyframes iphone {
-    50% {width:660px; height:480px;};
-    100% {width:630px; height:440px;};
+  50% {
+    width: 660px;
+    height: 480px;
+  }
+  100% {
+    width: 630px;
+    height: 440px;
+  }
 }
 
-
-@media only screen and (max-width: 800px){
-    h2.front-quote{
-        width:47%;
-    }
+@media only screen and (max-width: 800px) {
+  h2.front-quote {
+    width: 47%;
+  }
 }
 
-@media only screen and (max-width: 400px){
-    img {
-        transform: rotate(90deg);
-        height:100%;
-        width:100%;
-        padding:100px 0px;
-    }
+@media only screen and (max-width: 400px) {
+  img {
+    transform: rotate(90deg);
+    height: 100%;
+    width: 100%;
+    padding: 100px 0px;
+  }
 
-    ul.navbar li {
-        font-size:13px;
-        margin: 8px 8px;
-    }
+  ul.navbar li {
+    font-size: 13px;
+    margin: 8px 8px;
+  }
 
-    h2.front-quote{
-        width:30%;
-        left:50%;
-        font-size:16px;
-    }
+  h2.front-quote {
+    width: 30%;
+    left: 50%;
+    font-size: 16px;
+  }
 
-    @keyframes iphone {
-        50% {width:100%;};
+  @keyframes iphone {
+    50% {
+      width: 100%;
     }
+  }
 }

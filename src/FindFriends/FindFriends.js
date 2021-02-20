@@ -13,27 +13,20 @@ export default class FindFriends extends React.Component {
     return (
       <div className="App">
         <NavBar logged_in={this.context.logged_in} />
-        <input
-          type="search"
-          className="search-bar"
-          placeholder="Search.."
-        ></input>
-        <button type="submit">Search</button>
+        <h2 className="purpTitle">Find friends to Compete with here:</h2>
         <ul className="findfriends">
-        {users.map(user =>
-             <Link 
-             to={`/profile/${user.id}`}
-             key={user.id}>
+          {users.map((user) => (
+            <Link to={`/profile/${user.id}`} key={user.id} style={{textDecoration:"none"}}>
               <User
-              name={user.user_name}
-              bio={user.user_bio}
-              text="Add Friend"
-              id = {user.id}
-              key={user.id}
-              {...user}
-              /> 
-              </Link>
-            )}
+                name={user.user_name}
+                bio={user.user_bio}
+                text="Add Friend"
+                id={user.id}
+                key={user.id}
+                {...user}
+              />
+            </Link>
+          ))}
         </ul>
       </div>
     );

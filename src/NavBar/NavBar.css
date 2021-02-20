@@ -1,21 +1,31 @@
-h1.title, h4{
-    display:inline-block;
-    margin:5px;
+h1.title,
+h4 {
+  display: inline-block;
+  margin: 5px;
 }
 
-div.nav-bar h4{
-    float:right;
-    text-decoration: underline;
-    margin-top: 15px;
-    margin-top:25px;
-
+div.nav-bar h4 {
+  float: right;
+  text-decoration: underline;
+  margin-top: 15px;
+  margin-top: 25px;
 }
 
-h1.title{
-    float:left;
-    margin-top:15px;
+h1.title {
+  float: left;
+  margin-top: 15px;
 }
 
-.nav-bar{
-    padding-bottom:130px;
+.nav-bar {
+  padding-bottom: 130px;
+}
+
+@media (max-width: 449px) {
+  h1.title {
+    display: none;
+  }
+
+  div.nav-bar h4{
+      font-size:12px;
+  }
 }
