@@ -10,23 +10,26 @@ The average adult spends over 3 hours on their phone each day. That is a lot of 
 
 ## The App 
 
-Register and Login: 
+**Register and Login:**
 
 ![register and login page](./src/readme-imgs/reg.png)
 
+**Make a Profile:**
 
-View Users to Connect with:
+![profile page](./src/readme-imgs/scrtime-saver-profile-page.png)
 
-![users page](./src/readme-imgs/users.png)
+**View Users to Connect with:**
 
-Add Screentimes: 
+![users page](./src/readme-imgs/scrtime-saver-users-page.png)
+
+**Add Screentimes:**
 
 ![add times page](./src/readme-imgs/scrtimes.png)
 
 
-Compete with Friends: 
+**Compare times with Friends:** 
 
-![compare page](./src/readme-imgs/compare.png)
+![compare page](./src/readme-imgs/scrtime-saver-compare-page.png)
 
 
 
