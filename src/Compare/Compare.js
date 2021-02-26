@@ -17,14 +17,12 @@ export default class Compare extends React.Component {
     const { friends = [], scrtimes = [], logged_in = [] } = this.context;
     const { friendUserId } = this.props.match.params;
     const friend = friends.find((x) => x.id === parseFloat(friendUserId));
-    console.log(friendUserId);
     const scrtime = findScrtime(
       scrtimes,
       parseFloat(friend.friend_user_id)
     ) || {
       day_1: "",
     };
-    console.log(scrtime);
     const myScrtime = findMyScrtime(scrtimes, logged_in.userId) || {
       day_1: "",
     };

@@ -2,7 +2,7 @@
 
 Link to live website: https://screentime-saver.vercel.app/
 
-Screentime Saver is dedicated to aspiring digital minimalists. Users can post screentimes, make a profile, and compete with friends to win the lowest time of the week!
+Screentime Saver is dedicated to aspiring digital minimalists. Users can post screentimes, make a profile, and compete with friends to win the lowest screentime of the week!
 
 ## The Problem: 
 
@@ -32,9 +32,9 @@ The average adult spends over 3 hours on their phone each day. That is a lot of 
 ![compare page](./src/readme-imgs/scrtime-saver-compare-page.png)
 
 
+Link to the server repo: https://github.com/lindsayesterman/screentime-saver-server
 
 ## Stack 
 
 React, CSS, Node, Express, and PostgreSQL.
-
 
