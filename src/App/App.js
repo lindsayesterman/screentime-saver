@@ -31,8 +31,7 @@ class App extends React.Component {
     fetchAppData()
       .then(this.setAppData)
       .catch((error) => {
-        this.setState({ error });
-        console.error({ error });
+        console.log({ error });
       });
   }
 
@@ -153,9 +152,12 @@ class App extends React.Component {
               <h4>How Screentime-Saver works: </h4>
               <p>
                 Screentime-saver is an app that allows users to input phone
-                screentimes every day and compete with friends for the lowest
-                weekly average. Connect with friends and each week the friend
-                with the lowest weekly screentime is announced!
+                screentimes every week and compete with friends for the lowest
+                times of the week. 
+              </p>
+              <h4>Get started:</h4>
+              <p>
+                Just register for an account and login, then browse through users and make some friends. 
               </p>
             </div>
           </Route>

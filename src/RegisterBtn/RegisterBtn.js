@@ -1,9 +1,7 @@
 import React from "react";
 import UsersContext from "../usersContext.js";
-import config from "../config.js";
 import { Link } from "react-router-dom";
 import TokenService from "../services/token-service";
-import { fetchAppData } from "../AppData";
 import AuthApiService from "../services/auth-api-service";
 
 class Register extends React.Component {

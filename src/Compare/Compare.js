@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar.js";
 import UsersContext from "../usersContext";
-import { findFriend, findMyScrtime, findScrtime } from "../helper.js";
+import { findMyScrtime, findScrtime } from "../helper.js";
 import "./Compare.css";
 
 export default class Compare extends React.Component {
@@ -16,12 +16,15 @@ export default class Compare extends React.Component {
   render() {
     const { friends = [], scrtimes = [], logged_in = [] } = this.context;
     const { friendUserId } = this.props.match.params;
-    const friend = friends.find(x =>  x.id === parseFloat(friendUserId)) 
+    const friend = friends.find((x) => x.id === parseFloat(friendUserId));
     console.log(friendUserId);
-    const scrtime = findScrtime(scrtimes, parseFloat(friend.friend_user_id)) || {
+    const scrtime = findScrtime(
+      scrtimes,
+      parseFloat(friend.friend_user_id)
+    ) || {
       day_1: "",
     };
-    console.log(scrtime)
+    console.log(scrtime);
     const myScrtime = findMyScrtime(scrtimes, logged_in.userId) || {
       day_1: "",
     };
@@ -49,8 +52,14 @@ export default class Compare extends React.Component {
         <NavBar logged_in={this.context.logged_in} />
         <div className="compare">
           <h3>
-            Total week's screentime Difference:{" "}
-            {Math.abs(myTotalScrTime - totalScrTime) || "One of you needs to fill out your weekly screentime before you compare."}
+            {" "}
+            {friend.friend_name < logged_in.user_name
+              ? friend.friend_name
+              : logged_in.user_name}{" "}
+            wins this week's competition by{" "}
+            {Math.abs(myTotalScrTime - totalScrTime) ||
+              "One of you needs to fill out your weekly screentime before you compare"}
+           {" "}hours!
           </h3>
           <table>
             <tbody>

@@ -30,7 +30,6 @@ export default class Profile extends React.Component {
   }
 
   render() {
-    const logged_in = this.context.logged_in;
     const { users = [], scrtimes = [] } = this.context;
     const { userId } = this.props.match.params;
     const user = findUser(users, parseFloat(userId)) || { user_name: "" };
