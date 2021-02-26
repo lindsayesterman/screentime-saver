@@ -13,6 +13,7 @@ button {
   background-color: #FF6666;
   color: white;
   padding: 5px 15px;
+  border: 1px solid transparent;
 }
 
 h3.usersName {

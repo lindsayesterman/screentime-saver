@@ -17,10 +17,11 @@ export default class Compare extends React.Component {
     const { friends = [], scrtimes = [], logged_in = [] } = this.context;
     const { friendUserId } = this.props.match.params;
     const friend = friends.find(x =>  x.id === parseFloat(friendUserId)) 
-
-    const scrtime = findScrtime(scrtimes, parseFloat(friendUserId)) || {
+    console.log(friendUserId);
+    const scrtime = findScrtime(scrtimes, parseFloat(friend.friend_user_id)) || {
       day_1: "",
     };
+    console.log(scrtime)
     const myScrtime = findMyScrtime(scrtimes, logged_in.userId) || {
       day_1: "",
     };
@@ -49,7 +50,7 @@ export default class Compare extends React.Component {
         <div className="compare">
           <h3>
             Total week's screentime Difference:{" "}
-            {Math.abs(myTotalScrTime - totalScrTime)}{" "}
+            {Math.abs(myTotalScrTime - totalScrTime) || "One of you needs to fill out your weekly screentime before you compare."}
           </h3>
           <table>
             <tbody>
@@ -86,8 +87,8 @@ export default class Compare extends React.Component {
                 <td>{myScrtime.day_7 || userNoValues} hours</td>
               </tr>
               <tr>
-                <td>{totalScrTime || ""} </td>
-                <td>{myTotalScrTime || ""}</td>
+                <td>{totalScrTime || friendNoValues} </td>
+                <td>{myTotalScrTime || userNoValues}</td>
               </tr>
             </tbody>
           </table>
