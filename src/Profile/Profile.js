@@ -45,15 +45,19 @@ export default class Profile extends React.Component {
     return (
       <>
         <NavBar logged_in={this.context.logged_in} />
-        <div className="profile-info">
-          <h3 className="profileName">Name: {user.user_name || this.props.logged_in.user_name } </h3>
-          <h3 className="profileBio">About: {user.user_bio || this.props.logged_in.user_bio } </h3> 
+        <div className="topProfile">
+          <h3 className="profileName">Name: {user.user_name || this.props.logged_in.user_name} </h3>
+          <h3 className="profileBio">
+            About: {user.user_bio || this.props.logged_in.user_bio}{" "}
+          </h3>
           <h3 className="profileScrtime">
             Weekly screentime:{" "}
             {totalScrTime ||
               "You haven't entered screentimes for this week yet! "}
           </h3>
+          <button><Link to="/users" className="findproffriends">Find Friends</Link></button>
         </div>
+        <div className="profile-info"></div>
       </>
     );
   }

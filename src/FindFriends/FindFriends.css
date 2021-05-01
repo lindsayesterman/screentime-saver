@@ -39,7 +39,11 @@ h2.purpTitle {
 
 @media (max-width: 449px) {
   ul.findfriends li {
-    width: 83%;
-    padding: 25px;
+    width: 70%;
+    padding-left: 30px;
+  }
+
+  h2.purpTitle {
+    font-size:17px;
   }
 }

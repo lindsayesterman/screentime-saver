@@ -36,6 +36,21 @@ h3.profileScrtime {
   color: #bb86fc;
 }
 
+.topProfile{
+  background-color: #151a21;
+  border-radius: 10px;
+  text-align: left;
+  padding:80px;
+  height: 200px;
+  width:60%;
+  display: block;
+  margin:0 auto;
+}
+
+.findproffriends{
+  margin-top:100px;
+  padding:20px;
+}
 
 @media (max-width:449px){
     div.profile-info {
