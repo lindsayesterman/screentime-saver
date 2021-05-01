@@ -34,6 +34,7 @@ h3.profileBio {
 
 h3.profileScrtime {
   color: #bb86fc;
+  padding-bottom:30px;
 }
 
 .topProfile{
@@ -55,5 +56,10 @@ h3.profileScrtime {
 @media (max-width:449px){
     div.profile-info {
         width:90%;
+    }
+
+    .topProfile{
+      width:50%;
+      height:300px;
     }
 }
