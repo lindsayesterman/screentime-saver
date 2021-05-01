@@ -10,6 +10,10 @@ ul.findfriends li {
   background-color: #151a21;
 }
 
+ul.findfriends li:hover {
+  background-color: #1b2129;
+}
+
 button {
   background-color: #fd4d4d;
   color: white;

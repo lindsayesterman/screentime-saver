@@ -39,7 +39,7 @@ img {
   position: relative;
   display: block;
   margin: 20px auto 50px auto;
-  width: 40%;
+  width: 35%;
   height: 440px;
   animation-name: iphone;
   animation-duration: 3.5s;
@@ -54,10 +54,7 @@ img {
 
 @keyframes iphone {
   50% {
-    width: 45%;
-  }
-  100% {
-    width: 40%;
+    transform: scale(1.05);
   }
 }
 
