@@ -12,11 +12,11 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #ddd;
+  background-color: #aaa;
 }
 
 tr:nth-child(odd) {
-  background-color: #fff;
+  background-color: rgb(135, 143, 189);
 }
 
 div.compare h3 {

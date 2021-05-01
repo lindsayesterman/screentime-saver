@@ -43,7 +43,7 @@ img {
   height: 440px;
   animation-name: iphone;
   animation-duration: 3.5s;
-  border: 1px solid white;
+  border: 1px solid rgb(180, 81, 230);
 }
 
 .about {
