@@ -11,6 +11,7 @@ input, textarea{
     font-size: 17px;
     display:block;
     margin:20px auto;
+    color:black;
 }
 
 textarea {

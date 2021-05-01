@@ -2,18 +2,24 @@ ul.findfriends li {
   display: block;
   margin: 20px auto;
   list-style: none;
-  border: 1px solid #ccc;
+  border: none;
   height: 100%;
   padding: 40px;
   width: 50%;
-  background-color: #E6E6E6;
+  border-radius: 8px;
+  background-color: #151a21;
 }
 
 button {
-  background-color: #FF6666;
+  background-color: #fd4d4d;
   color: white;
-  padding: 5px 15px;
-  border: 1px solid transparent;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #fd4d4dcd;
 }
 
 h3.usersName {
@@ -26,14 +32,14 @@ h3.usersBio {
   color: rgb(82, 214, 82);
 }
 
-h2.purpTitle{
-  text-align:center;
-  color:#bb86fc;
+h2.purpTitle {
+  text-align: center;
+  color: #bb86fc;
 }
 
-@media (max-width:449px){
+@media (max-width: 449px) {
   ul.findfriends li {
-    width:83%;
-    padding:25px;
+    width: 83%;
+    padding: 25px;
   }
 }

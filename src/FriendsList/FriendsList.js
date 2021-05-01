@@ -14,10 +14,10 @@ export default class FriendsList extends React.Component {
     return (
       <>
         <NavBar logged_in={this.context.logged_in} />
-        <h2 className="purpTitle" style={{color:" rgb(82, 214, 82)"}}>Click on a friend to compare screentimes;)</h2>
+        <h2 className="purpTitle" style={{color:" rgb(82, 214, 82)"}}>Click on a friend to compare screentimes</h2>
         <ul className="findfriends">
           {myFriends.map((friend) => (
-            <Link to={`/compare/${friend.id}`} key={friend.id}>
+            <Link style={{textDecoration:"none"}}to={`/compare/${friend.id}`} key={friend.id}>
               <User
                 name={friend.friend_name}
                 text={friend.date_created}

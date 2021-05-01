@@ -9,7 +9,7 @@ import UsersContext from "../usersContext";
 import FriendsList from "../FriendsList/FriendsList";
 import AddTimes from "../AddTimes/AddTimes";
 import Compare from "../Compare/Compare";
-import iphone from "../iphone.png";
+import iphone from "../trippy-phone.png";
 import { fetchAppData } from "../AppData.js";
 
 class App extends React.Component {
