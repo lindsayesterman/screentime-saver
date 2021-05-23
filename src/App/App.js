@@ -147,7 +147,7 @@ class App extends React.Component {
               heading=""
               dataText={[
                 "Are you a digital minimalist?",
-                "Compete with your friends to find out!",
+                "Compete with friends to find out!",
               ]}
             ></Typer>
             </div>
