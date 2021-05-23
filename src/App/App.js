@@ -11,6 +11,7 @@ import AddTimes from "../AddTimes/AddTimes";
 import Compare from "../Compare/Compare";
 import iphone from "../trippy-phone.png";
 import { fetchAppData } from "../AppData.js";
+import Typer from "../Typer/Typer";
 
 class App extends React.Component {
   constructor(props) {
@@ -142,22 +143,25 @@ class App extends React.Component {
               </li>
             </ul>
             <div className="container-front">
-              <img src={iphone} alt="iphone"></img>
-              <h2 className="front-quote">
-                Are you a digital minimalist? Compete with your friends to find
-                out!
-              </h2>
+            <Typer
+              heading=""
+              dataText={[
+                "Are you a digital minimalist?",
+                "Compete with your friends to find out!",
+              ]}
+            ></Typer>
             </div>
             <div className="about">
               <h4>How Screentime-Saver works: </h4>
               <p>
                 Screentime-saver is an app that allows users to input phone
                 screentimes every week and compete with friends for the lowest
-                times of the week. 
+                times of the week.
               </p>
               <h4>Get started:</h4>
               <p>
-                Just register for an account and login, then browse through users and make some friends. 
+                Just register for an account and login, then browse through
+                users and make some friends.
               </p>
             </div>
           </Route>
@@ -171,7 +175,13 @@ class App extends React.Component {
           <Route
             path="/users"
             render={(routeProps) => {
-              return <FindFriends users={context.users} logged_in={context.logged_in} {...routeProps} />;
+              return (
+                <FindFriends
+                  users={context.users}
+                  logged_in={context.logged_in}
+                  {...routeProps}
+                />
+              );
             }}
           />
           <Route

@@ -33,6 +33,10 @@ h2.front-quote {
 .container-front {
   position: relative;
   text-align: center;
+  padding:150px 100px;
+  /* border:1px solid pink; */
+  width:80%;
+  margin:50px auto;
 }
 
 img {
@@ -94,6 +98,10 @@ img {
     font-size: 16px;
   }
 
+  .container-front {
+    padding:70px 50px;
+  }
+  
   @keyframes iphone {
     50% {
       width: 100%;
