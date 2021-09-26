@@ -55,7 +55,7 @@ export default class Profile extends React.Component {
             {totalScrTime ||
               "You haven't entered screentimes for this week yet! "}
           </h3>
-          <button><Link to="/users" className="findproffriends">Find Friends</Link></button>
+          {/* <button><Link to="/users" className="findproffriends">Find Friends</Link></button> */}
         </div>
         <div className="profile-info"></div>
       </>

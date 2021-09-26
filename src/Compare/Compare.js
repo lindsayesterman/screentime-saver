@@ -51,13 +51,13 @@ export default class Compare extends React.Component {
         <div className="compare">
           <h3>
             {" "}
-            {friend.friend_name < logged_in.user_name
-              ? friend.friend_name
-              : logged_in.user_name}{" "}
-            wins this week's competition by{" "}
-            {Math.abs(myTotalScrTime - totalScrTime) ||
-              "One of you needs to fill out your weekly screentime before you compare"}
-           {" "}hours!
+            {myTotalScrTime && totalScrTime
+              ? myTotalScrTime > totalScrTime
+                ? logged_in.user_name
+                : logged_in.user_name +
+                  " wins this week competition by " +
+                  Math.abs(myTotalScrTime - totalScrTime) + " hours!"
+              : "One of you needs to fill out your weekly screentime before you compare"}
           </h3>
           <table>
             <tbody>
@@ -66,36 +66,36 @@ export default class Compare extends React.Component {
                 <th>{logged_in.user_name}</th>
               </tr>
               <tr>
-                <td>{scrtime.day_1 || friendNoValues} hours</td>
-                <td>{myScrtime.day_1 || userNoValues} hours</td>
+                <td>{scrtime.day_1 || friendNoValues} </td>
+                <td>{myScrtime.day_1 || userNoValues} </td>
               </tr>
               <tr>
-                <td>{scrtime.day_2 || friendNoValues} hours</td>
-                <td>{myScrtime.day_2 || userNoValues} hours</td>
+                <td>{scrtime.day_2 || friendNoValues} </td>
+                <td>{myScrtime.day_2 || userNoValues} </td>
               </tr>
               <tr>
-                <td>{scrtime.day_3 || friendNoValues} hours</td>
-                <td>{myScrtime.day_3 || userNoValues} hours</td>
+                <td>{scrtime.day_3 || friendNoValues} </td>
+                <td>{myScrtime.day_3 || userNoValues} </td>
               </tr>
               <tr>
-                <td>{scrtime.day_4 || friendNoValues} hours</td>
-                <td>{myScrtime.day_4 || userNoValues} hours</td>
+                <td>{scrtime.day_4 || friendNoValues} </td>
+                <td>{myScrtime.day_4 || userNoValues} </td>
               </tr>
               <tr>
-                <td>{scrtime.day_5 || friendNoValues} hours</td>
-                <td>{myScrtime.day_5 || userNoValues} hours</td>
+                <td>{scrtime.day_5 || friendNoValues} </td>
+                <td>{myScrtime.day_5 || userNoValues} </td>
               </tr>
               <tr>
-                <td>{scrtime.day_6 || friendNoValues} hours</td>
-                <td>{myScrtime.day_6 || userNoValues} hours</td>
+                <td>{scrtime.day_6 || friendNoValues} </td>
+                <td>{myScrtime.day_6 || userNoValues} </td>
               </tr>
               <tr>
-                <td>{scrtime.day_7 || friendNoValues} hours</td>
-                <td>{myScrtime.day_7 || userNoValues} hours</td>
+                <td>{scrtime.day_7 || friendNoValues} </td>
+                <td>{myScrtime.day_7 || userNoValues} </td>
               </tr>
               <tr>
-                <td>{totalScrTime || friendNoValues} </td>
-                <td>{myTotalScrTime || userNoValues}</td>
+                <td>Total: {totalScrTime || friendNoValues} </td>
+                <td>Total: {myTotalScrTime || userNoValues}</td>
               </tr>
             </tbody>
           </table>

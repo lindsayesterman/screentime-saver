@@ -7,11 +7,11 @@ ul.findfriends li {
   padding: 40px;
   width: 50%;
   border-radius: 8px;
-  background-color: #151a21;
+  background-color: #1b2129;
 }
 
 ul.findfriends li:hover {
-  background-color: #1b2129;
+  background-color: rgb(33, 43, 56);
 }
 
 button {

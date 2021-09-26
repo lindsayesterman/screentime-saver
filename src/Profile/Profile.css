@@ -38,11 +38,11 @@ h3.profileScrtime {
 }
 
 .topProfile{
-  background-color: #151a21;
+  background-color: #1f2732;
   border-radius: 10px;
   text-align: left;
-  padding:80px;
-  height: 200px;
+  padding:60px;
+  height: 100%;
   width:60%;
   display: block;
   margin:0 auto;
@@ -51,6 +51,10 @@ h3.profileScrtime {
 .findproffriends{
   margin-top:100px;
   padding:20px;
+}
+
+h3 {
+  font-size:25px;
 }
 
 @media (max-width:449px){
