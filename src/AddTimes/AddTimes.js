@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
 import UsersContext from "../usersContext";
-import config from '../config.js'
+import config from "../config.js";
 import TokenService from "../services/token-service";
 
 export default class AddTimes extends React.Component {
@@ -30,7 +30,7 @@ export default class AddTimes extends React.Component {
       body: JSON.stringify(scrtime),
       headers: {
         "content-type": "application/json",
-        "Authorization": "bearer " + TokenService.getAuthToken()
+        Authorization: "bearer " + TokenService.getAuthToken(),
       },
     })
       .then((res) => {
@@ -43,7 +43,7 @@ export default class AddTimes extends React.Component {
       })
       .then((data) => {
         this.context.addScrTime(data);
-        this.setState({ scrtimes: data })
+        this.setState({ scrtimes: data });
         this.props.history.push(`/profile/${data.user_id}`);
       })
       .catch((error) => {
@@ -54,15 +54,60 @@ export default class AddTimes extends React.Component {
   render() {
     return (
       <>
-        <NavBar  logged_in={this.context.logged_in} />
+        <NavBar logged_in={this.context.logged_in} />
+        <h2 className="purpTitle" style={{ color: "#aeddff" }}>
+          Submit daily screen time hours here!
+        </h2>{" "}
         <form onSubmit={(e) => this.handleScrSubmit(e)}>
-          <input type="number" placeholder="Sunday Screentime" name="sun" id="sun" required></input>
-          <input type="number" placeholder="Monday Screentime" name="mon" id="mon" required></input>
-          <input type="number" placeholder="Tuesday Screentime" name="tues" id="tues" required></input>
-          <input type="number" placeholder="Wednesday Screentime" name="wed" id="wed" required></input>
-          <input type="number" placeholder="Thursday Screentime" name="thurs" id="thurs" required></input>
-          <input type="number" placeholder="Friday Screentime" name="fri" id="fri" required></input>
-          <input type="number" placeholder="Saturday Screentime" name="sat" id="sat" required></input>
+          <input
+            type="number"
+            placeholder="Sunday Screentime"
+            name="sun"
+            id="sun"
+            required
+          ></input>
+          <input
+            type="number"
+            placeholder="Monday Screentime"
+            name="mon"
+            id="mon"
+            required
+          ></input>
+          <input
+            type="number"
+            placeholder="Tuesday Screentime"
+            name="tues"
+            id="tues"
+            required
+          ></input>
+          <input
+            type="number"
+            placeholder="Wednesday Screentime"
+            name="wed"
+            id="wed"
+            required
+          ></input>
+          <input
+            type="number"
+            placeholder="Thursday Screentime"
+            name="thurs"
+            id="thurs"
+            required
+          ></input>
+          <input
+            type="number"
+            placeholder="Friday Screentime"
+            name="fri"
+            id="fri"
+            required
+          ></input>
+          <input
+            type="number"
+            placeholder="Saturday Screentime"
+            name="sat"
+            id="sat"
+            required
+          ></input>
           <button type="submit">Submit this weeks screentimes!</button>
         </form>
       </>
